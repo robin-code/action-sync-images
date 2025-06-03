@@ -1,0 +1,47 @@
+# 工作流名称
+name: Sync-Images-to-DockerHub-Example
+# 工作流运行时显示名称
+run-name: ${{ github.actor }} is Sync Images to DockerHub.
+# 怎样触发工作流
+on:
+  push:
+    branches: ['main']
+  pull_request:
+    branches: ['main']
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# 工作流程任务（通常含有一个或多个步骤）
+jobs:
+  syncimages:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repos
+        uses: actions/checkout@v4
+
+      - name: Install Skopeo
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y skopeo
+      # 添加调试步骤，确认文件位置
+      - name: Debug - List Files
+        run: |
+          pwd
+          ls -la
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2.9.1
+
+      - name: Login to docker registry
+        uses: docker/login-action@v3
+        with:
+          username: ${{ vars.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
+          registry: ${{ vars.DOCKER_REGISTRY }}
+
+      - name: Use Skopeo Tools Sync Image to Docker Hub
+        env:
+          IMAGE_REGISTRY_NAME_SPACE: ${{ vars.DOCKER_REGISTRY }}/${{ vars.REGISTRY_NAME_SPACE }}
+        run: bash syncImages.sh
+
