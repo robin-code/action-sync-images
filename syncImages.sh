@@ -14,9 +14,12 @@ while IFS= read -r image || [[ -n "$image" ]]; do
   if [[ -z "$image" ]] || [[ "$image" =~ ^[[:space:]]*# ]]; then
     continue
   fi
-  IMAGE_NAME=$(echo "$image" | awk -F'/' '{split($NF,a,":"); print a[1]}')
-  TARGET_IMAGE="${IMAGE_REGISTRY_NAME_SPACE}/${IMAGE_NAME}"
 
+  # 提取镜像名称和版本号
+  IMAGE_NAME=$(echo "$image" | awk -F'/' '{split($NF,a,":"); print a[1]}')
+  VERSION_TAG=$(echo "$image" | awk -F: '{print $2}')
+  TARGET_IMAGE="${IMAGE_REGISTRY_NAME_SPACE}/${IMAGE_NAME}:${VERSION_TAG}"
+  
   echo "🚀 同步镜像: $image -> $TARGET_IMAGE"
   skopeo copy docker://$image docker://$TARGET_IMAGE
 done < image.txt
