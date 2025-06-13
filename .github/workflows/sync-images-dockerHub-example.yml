@@ -43,5 +43,5 @@ jobs:
       - name: Use Skopeo Tools Sync Image to Docker Hub
         env:
           IMAGE_REGISTRY_NAME_SPACE: ${{ vars.DOCKER_REGISTRY }}/${{ vars.REGISTRY_NAME_SPACE }}
-        run: bash syncImages.sh
+        run: bash copy_image_to_aliyun.sh
 

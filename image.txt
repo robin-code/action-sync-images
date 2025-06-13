@@ -28,4 +28,5 @@
 #quay.io/prometheus-operator/prometheus-operator:v0.76.1
 #quay.io/prometheus/node-exporter:v1.8.2
 
-registry.k8s.io/sig-storage/nfs-subdir-external-provisioner:v4.0.2
+#registry.k8s.io/sig-storage/nfs-subdir-external-provisioner:v4.0.2
+quay.io/skopeo/stable:latest

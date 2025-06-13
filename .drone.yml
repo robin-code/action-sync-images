@@ -1,0 +1,43 @@
+kind: pipeline
+type: kubernetes
+name: sync-images-to-harbor
+
+trigger:
+  branch:
+    - main
+  event:
+    - push
+
+steps:
+  - name: sync-images
+    image: quay.io/skopeo/stable:latest
+    environment:
+      HARBOR_USERNAME:
+        from_secret: HARBOR_USERNAME
+      HARBOR_PASSWORD:
+        from_secret: HARBOR_PASSWORD
+    commands:
+      - echo "开始同步镜像到 Harbor..."
+      - chmod +x ./sync_to_harbor.sh
+      - ./sync_to_harbor.sh
+
+  - name: comment synced images
+    image: alpine
+    commands:
+      - cp image.txt image.txt.bak
+      - awk '/^[[:space:]]*#/ || /^[[:space:]]*$/ {print $0; next} {print "# "$0}' image.txt.bak > image.txt
+
+  - name: commit and push
+    image: alpine/git
+    environment:
+      GIT_USERNAME:
+        from_secret: GIT_USERNAME
+      GIT_TOKEN:
+        from_secret: GIT_TOKEN
+    commands:
+      - git config user.name "drone-bot"
+      - git config user.email "drone@ci"
+      - git add image.txt
+      - 'git commit -m "docs: 标记已同步的镜像为注释状态" || echo "No changes to commit"'
+      - git remote set-url origin https://$GIT_USERNAME:$GIT_TOKEN@git.riji.life/DevOps/action-sync-images.git
+      - git push origin HEAD:${DRONE_BRANCH}
