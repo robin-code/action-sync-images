@@ -1,9 +1,84 @@
 kind: pipeline
 type: kubernetes
-name: ssh-cleanup
+name: clean node1
 
 steps:
-  - name: upload delete-images.txt to remote host
+  - name: upload delete-images.txt to node1
+    image: appleboy/drone-scp
+    settings:
+      host: 10.0.0.111
+      username: robin
+      port: 22
+      key:
+        from_secret: SSH_PRIVATE_KEY
+      source: delete-images.txt
+      target: /home/robin/
+  - name: cleanup images on node1
+    image: appleboy/drone-ssh
+    settings:
+      host: 10.0.0.111
+      username: robin
+      port: 22
+      key:
+        from_secret: SSH_PRIVATE_KEY
+      script:
+        - crictl rmi $(cat /home/robin/delete-images.txt) || true
+---
+kind: pipeline
+type: kubernetes
+name: clean node2
+steps:
+  - name: upload delete-images.txt to node2
+    image: appleboy/drone-scp
+    settings:
+      host: 10.0.0.112
+      username: robin
+      port: 22
+      key:
+        from_secret: SSH_PRIVATE_KEY
+      source: delete-images.txt
+      target: /home/robin/
+  - name: cleanup images on node2
+    image: appleboy/drone-ssh
+    settings:
+      host: 10.0.0.112
+      username: robin
+      port: 22
+      key:
+        from_secret: SSH_PRIVATE_KEY
+      script:
+        - crictl rmi $(cat /home/robin/delete-images.txt) || true
+---
+kind: pipeline
+type: kubernetes
+name: clean node3
+steps:
+  - name: upload delete-images.txt to node3
+    image: appleboy/drone-scp
+    settings:
+      host: 10.0.0.113
+      username: robin
+      port: 22
+      key:
+        from_secret: SSH_PRIVATE_KEY
+      source: delete-images.txt
+      target: /home/robin/
+  - name: cleanup images on node3
+    image: appleboy/drone-ssh
+    settings:
+      host: 10.0.0.113
+      username: robin
+      port: 22
+      key:
+        from_secret: SSH_PRIVATE_KEY
+      script:
+        - crictl rmi $(cat /home/robin/delete-images.txt) || true
+---
+kind: pipeline
+type: kubernetes
+name: clean node4
+steps:
+  - name: upload delete-images.txt to node4
     image: appleboy/drone-scp
     settings:
       host: 10.0.0.157
@@ -13,11 +88,35 @@ steps:
         from_secret: SSH_PRIVATE_KEY
       source: delete-images.txt
       target: /home/robin/
-
-  - name: cleanup images on remote host
+  - name: cleanup images on node4
     image: appleboy/drone-ssh
     settings:
       host: 10.0.0.157
+      username: robin
+      port: 22
+      key:
+        from_secret: SSH_PRIVATE_KEY
+      script:
+        - crictl rmi $(cat /home/robin/delete-images.txt) || true
+---
+kind: pipeline
+type: kubernetes
+name: clean node5
+steps:
+  - name: upload delete-images.txt to node5
+    image: appleboy/drone-scp
+    settings:
+      host: 10.0.0.158
+      username: robin
+      port: 22
+      key:
+        from_secret: SSH_PRIVATE_KEY
+      source: delete-images.txt
+      target: /home/robin/
+  - name: cleanup images on node5
+    image: appleboy/drone-ssh
+    settings:
+      host: 10.0.0.158
       username: robin
       port: 22
       key:
