@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+# 检查是否有需要同步的镜像
+need_sync_count=$(grep -v '^[[:space:]]*#' image.txt | grep -v '^[[:space:]]*$' | wc -l)
+if [[ "$need_sync_count" -eq 0 ]]; then
+  echo "✅ 没有需要同步的镜像，流水线终止"
+  exit 1
+fi
+
 set -e
 
 export IMAGE_REGISTRY_NAME_SPACE=registry.cn-hangzhou.aliyuncs.com/robin-public
