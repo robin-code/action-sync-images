@@ -9,30 +9,13 @@ fi
 
 set -e
 
-export IMAGE_REGISTRY_NAME_SPACE=registry.cn-hangzhou.aliyuncs.com/robin-public
-echo ${IMAGE_REGISTRY_NAME_SPACE}
-
-
-export HARBOR_REGISTRY=harbor.riji.life
-echo ${HARBOR_REGISTRY}
-
-
-export HARBOR_IMAGE_REGISTRY_NAME_SPACE=harbor.riji.life/robin-public
-echo ${HARBOR_IMAGE_REGISTRY_NAME_SPACE}
-
-
-# 检查变量是否已设置
-if [[ -z "${IMAGE_REGISTRY_NAME_SPACE}" ]]; then
-  echo "❌ 环境变量 IMAGE_REGISTRY_NAME_SPACE 未设置。请设置为你的Harbor镜像命名空间"
-  exit 1
-fi
-
 # 登录到Harbor
 if [[ -n "${HARBOR_USERNAME}" ]] && [[ -n "${HARBOR_PASSWORD}" ]]; then
   echo "🔑 登录到Harbor..."
   skopeo login --username "${HARBOR_USERNAME}" --password "${HARBOR_PASSWORD}" "${HARBOR_REGISTRY}"
 else
-  echo "⚠️ 未提供Harbor凭据，假设已经登录"
+  echo "⚠️ 未提供Harbor凭据"
+  exit 1
 fi
 
 # 读取镜像列表文件
