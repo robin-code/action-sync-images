@@ -1,10 +1,10 @@
 #drone ci
-quay.io/skopeo/stable:latest
-alpine/git:latest
-maven:3.8-openjdk-8
-plugins/kaniko:latest
-argoproj/argocd:latest
-gradle:8.5-jdk21
+# quay.io/skopeo/stable:latest
+# alpine/git:latest
+# maven:3.8-openjdk-8
+# plugins/kaniko:latest
+# argoproj/argocd:latest
+# gradle:8.5-jdk21
 
 
 #docker.io/nginx:1.25.3
