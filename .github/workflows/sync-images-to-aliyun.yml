@@ -1,7 +1,7 @@
 # 工作流名称
-name: Sync-Images-to-DockerHub-Example
+name: Sync-Images-to-AliyunCr-Example
 # 工作流运行时显示名称
-run-name: ${{ github.actor }} is Sync Images to DockerHub.
+run-name: ${{ github.actor }} is Sync Images to Aliyun.
 # 怎样触发工作流
 on:
   push:
@@ -40,7 +40,7 @@ jobs:
           password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
           registry: ${{ vars.DOCKER_REGISTRY }}
 
-      - name: Use Skopeo Tools Sync Image to Docker Hub
+      - name: Use Skopeo Tools Sync Image to Aliyun Cr
         env:
           IMAGE_REGISTRY_NAME_SPACE: ${{ vars.DOCKER_REGISTRY }}/${{ vars.REGISTRY_NAME_SPACE }}
         run: bash sync_to_aliyun.sh
