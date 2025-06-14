@@ -1,5 +1,32 @@
 kind: pipeline
 type: kubernetes
+name: ssh-cleanup
+
+steps:
+  - name: upload delete-images.txt to remote host
+    image: appleboy/drone-scp
+    settings:
+      host: 10.0.0.157
+      username: robin
+      port: 22
+      key:
+        from_secret: SSH_PRIVATE_KEY
+      source: delete-images.txt
+      target: /home/robin/
+
+  - name: cleanup images on remote host
+    image: appleboy/drone-ssh
+    settings:
+      host: 10.0.0.157
+      username: robin
+      port: 22
+      key:
+        from_secret: SSH_PRIVATE_KEY
+      script:
+        - crictl rmi $(cat /home/robin/delete-images.txt) || true
+---
+kind: pipeline
+type: kubernetes
 name: sync-images-to-harbor
 
 trigger:
