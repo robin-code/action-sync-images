@@ -34,9 +34,13 @@ steps:
         from_secret: GIT_USERNAME
       GIT_TOKEN:
         from_secret: GIT_TOKEN
+      DRONE_BOT_BOT_EMAIL:
+        from_secret: DRONE_BOT_BOT_EMAIL
+      DRONE_BOT_BOT_NAME:
+        from_secret: DRONE_BOT_BOT_NAME
     commands:
-      - git config user.name "drone-bot"
-      - git config user.email "drone@ci"
+      - git config user.email $DRONE_BOT_BOT_EMAIL
+      - git config user.name $DRONE_BOT_BOT_NAME
       - git add image.txt
       - 'git commit -m "docs: 标记已同步的镜像为注释状态" || echo "No changes to commit"'
       - git remote set-url origin https://$GIT_USERNAME:$GIT_TOKEN@git.riji.life/DevOps/action-sync-images.git
