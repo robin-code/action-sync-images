@@ -47,6 +47,6 @@ steps:
       - git config user.email $DRONE_BOT_BOT_EMAIL
       - git config user.name $DRONE_BOT_BOT_NAME
       - git add image.txt
-      - 'git commit -m "docs: 标记已同步的镜像为注释状态" || echo "No changes to commit"'
+      - 'git commit -m "ci: 标记已同步的镜像为注释状态" || echo "No changes to commit"'
       - git remote set-url origin https://$GIT_USERNAME:$GIT_TOKEN@git.riji.life/DevOps/action-sync-images.git
       - git push origin HEAD:${DRONE_BRANCH}
