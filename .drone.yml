@@ -12,7 +12,7 @@ steps:
       key:
         from_secret: SSH_PRIVATE_KEY
       script:
-        - crictl rmi $(cat ~/delete-images.txt) || true
+        - crictl rmi $(cat ${DRONE_WORKSPACE}/delete-images.txt) || true
 ---
 kind: pipeline
 type: kubernetes
