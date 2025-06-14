@@ -29,4 +29,4 @@
 #quay.io/prometheus/node-exporter:v1.8.2
 
 #registry.k8s.io/sig-storage/nfs-subdir-external-provisioner:v4.0.2
-quay.io/skopeo/stable:latest
+# quay.io/skopeo/stable:latest
