@@ -36,9 +36,8 @@ while IFS= read -r image || [[ -n "$image" ]]; do
 
   HARBOR_IMAGE="${HARBOR_IMAGE_REGISTRY_NAME_SPACE}/${image}"
 
-
   echo "🚀 同步镜像: $image -> $TARGET_IMAGE -> $HARBOR_IMAGE"
-  skopeo copy docker://$image docker://$HARBOR_IMAGE
+  skopeo copy docker://$TARGET_IMAGE docker://$HARBOR_IMAGE
 done < image.txt
 
 echo "✅ 所有镜像同步完成!"

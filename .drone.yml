@@ -23,6 +23,7 @@ steps:
         from_secret: SSH_PRIVATE_KEY
       script:
         - crictl rmi $(cat /home/robin/delete-images.txt) || true
+        - for img in $(crictl images | grep '<none>' | awk '{print $3}'); do crictl rmi $img || true; done
 ---
 kind: pipeline
 type: kubernetes
@@ -48,6 +49,7 @@ steps:
         from_secret: SSH_PRIVATE_KEY
       script:
         - crictl rmi $(cat /home/robin/delete-images.txt) || true
+        - for img in $(crictl images | grep '<none>' | awk '{print $3}'); do crictl rmi $img || true; done
 ---
 kind: pipeline
 type: kubernetes
@@ -73,6 +75,7 @@ steps:
         from_secret: SSH_PRIVATE_KEY
       script:
         - crictl rmi $(cat /home/robin/delete-images.txt) || true
+        - for img in $(crictl images | grep '<none>' | awk '{print $3}'); do crictl rmi $img || true; done
 ---
 kind: pipeline
 type: kubernetes
@@ -98,6 +101,7 @@ steps:
         from_secret: SSH_PRIVATE_KEY
       script:
         - crictl rmi $(cat /home/robin/delete-images.txt) || true
+        - for img in $(crictl images | grep '<none>' | awk '{print $3}'); do crictl rmi $img || true; done
 ---
 kind: pipeline
 type: kubernetes
