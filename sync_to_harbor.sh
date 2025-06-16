@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
+mkdir -p /data
 # 检查是否有需要同步的镜像
 need_sync_count=$(grep -v '^[[:space:]]*#' image.txt | grep -v '^[[:space:]]*$' | wc -l)
 if [[ "$need_sync_count" -eq 0 ]]; then
   echo "✅ 没有需要同步的镜像，流水线终止"
-  exit 1
+  echo "none" > /data/sync_result.txt
+  exit 0
 fi
 
 set -e
@@ -39,5 +41,5 @@ while IFS= read -r image || [[ -n "$image" ]]; do
   echo "🚀 同步镜像: $image -> $TARGET_IMAGE -> $HARBOR_IMAGE"
   skopeo copy docker://$TARGET_IMAGE docker://$HARBOR_IMAGE
 done < image.txt
-
+echo "success" > /data/sync_result.txt
 echo "✅ 所有镜像同步完成!"

@@ -139,9 +139,16 @@ trigger:
     - push
     - custom
 
+volumes:
+  - name: shared
+    host:
+      path: /root/maven/cache
 steps:
   - name: sync-images
     image: harbor.riji.life/robin-public/quay.io/skopeo/stable:latest
+    volumes:
+      - name: shared
+        path: /data
     environment:
       HARBOR_USERNAME:
         from_secret: HARBOR_USERNAME
@@ -156,15 +163,28 @@ steps:
       - echo "开始同步镜像到 Harbor..."
       - chmod +x ./sync_to_harbor.sh
       - ./sync_to_harbor.sh
-
+      - cat /data/sync_result.txt
   - name: comment synced images
     image: harbor.riji.life/robin-public/alpine
+    volumes:
+      - name: shared
+        path: /data
     commands:
+      - result=$(cat /data/sync_result.txt)
+      - echo "结果是：$result"
+      - |
+        if [ "$result" = "none" ]; then
+          echo "✅ 没有需要同步的镜像，跳过 image.txt 修改"
+          exit 0
+        fi
       - cp image.txt image.txt.bak
       - awk '/^[[:space:]]*#/ || /^[[:space:]]*$/ {print $0; next} {print "# "$0}' image.txt.bak > image.txt
 
   - name: commit and push
     image: harbor.riji.life/robin-public/alpine/git
+    volumes:
+      - name: shared
+        path: /data
     environment:
       GIT_USERNAME:
         from_secret: GIT_USERNAME
@@ -175,6 +195,13 @@ steps:
       DRONE_BOT_BOT_NAME:
         from_secret: DRONE_BOT_BOT_NAME
     commands:
+      - result=$(cat /data/sync_result.txt)
+      - echo "结果是：$result"
+      - |
+        if [ "$result" = "none" ]; then
+          echo "✅ 没有需要同步的镜像，跳过 image.txt 修改"
+          exit 0
+        fi
       - git config user.email $DRONE_BOT_BOT_EMAIL
       - git config user.name $DRONE_BOT_BOT_NAME
       - git add image.txt
