@@ -4,7 +4,7 @@ name: clean node1
 
 steps:
   - name: upload delete-images.txt to node1
-    image: appleboy/drone-scp
+    image: harbor.riji.life/robin-public/appleboy/drone-scp
     settings:
       host: 10.0.0.111
       username: robin
@@ -14,7 +14,7 @@ steps:
       source: delete-images.txt
       target: /home/robin/
   - name: cleanup images on node1
-    image: appleboy/drone-ssh
+    image: harbor.riji.life/robin-public/appleboy/drone-ssh
     settings:
       host: 10.0.0.111
       username: robin
@@ -30,7 +30,7 @@ type: kubernetes
 name: clean node2
 steps:
   - name: upload delete-images.txt to node2
-    image: appleboy/drone-scp
+    image: harbor.riji.life/robin-public/appleboy/drone-scp
     settings:
       host: 10.0.0.112
       username: robin
@@ -40,7 +40,7 @@ steps:
       source: delete-images.txt
       target: /home/robin/
   - name: cleanup images on node2
-    image: appleboy/drone-ssh
+    image: harbor.riji.life/robin-public/appleboy/drone-ssh
     settings:
       host: 10.0.0.112
       username: robin
@@ -56,7 +56,7 @@ type: kubernetes
 name: clean node3
 steps:
   - name: upload delete-images.txt to node3
-    image: appleboy/drone-scp
+    image: harbor.riji.life/robin-public/appleboy/drone-scp
     settings:
       host: 10.0.0.113
       username: robin
@@ -66,7 +66,7 @@ steps:
       source: delete-images.txt
       target: /home/robin/
   - name: cleanup images on node3
-    image: appleboy/drone-ssh
+    image: harbor.riji.life/robin-public/appleboy/drone-ssh
     settings:
       host: 10.0.0.113
       username: robin
@@ -82,7 +82,7 @@ type: kubernetes
 name: clean node4
 steps:
   - name: upload delete-images.txt to node4
-    image: appleboy/drone-scp
+    image: harbor.riji.life/robin-public/appleboy/drone-scp
     settings:
       host: 10.0.0.157
       username: robin
@@ -92,7 +92,7 @@ steps:
       source: delete-images.txt
       target: /home/robin/
   - name: cleanup images on node4
-    image: appleboy/drone-ssh
+    image: harbor.riji.life/robin-public/appleboy/drone-ssh
     settings:
       host: 10.0.0.157
       username: robin
@@ -108,7 +108,7 @@ type: kubernetes
 name: clean node5
 steps:
   - name: upload delete-images.txt to node5
-    image: appleboy/drone-scp
+    image: harbor.riji.life/robin-public/appleboy/drone-scp
     settings:
       host: 10.0.0.158
       username: robin
@@ -118,7 +118,7 @@ steps:
       source: delete-images.txt
       target: /home/robin/
   - name: cleanup images on node5
-    image: appleboy/drone-ssh
+    image: harbor.riji.life/robin-public/appleboy/drone-ssh
     settings:
       host: 10.0.0.158
       username: robin
@@ -141,7 +141,7 @@ trigger:
 
 steps:
   - name: sync-images
-    image: quay.io/skopeo/stable:latest
+    image: harbor.riji.life/robin-public/quay.io/skopeo/stable:latest
     environment:
       HARBOR_USERNAME:
         from_secret: HARBOR_USERNAME
@@ -158,13 +158,13 @@ steps:
       - ./sync_to_harbor.sh
 
   - name: comment synced images
-    image: alpine
+    image: harbor.riji.life/robin-public/alpine
     commands:
       - cp image.txt image.txt.bak
       - awk '/^[[:space:]]*#/ || /^[[:space:]]*$/ {print $0; next} {print "# "$0}' image.txt.bak > image.txt
 
   - name: commit and push
-    image: alpine/git
+    image: harbor.riji.life/robin-public/alpine/git
     environment:
       GIT_USERNAME:
         from_secret: GIT_USERNAME
