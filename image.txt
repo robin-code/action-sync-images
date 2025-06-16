@@ -1,13 +1,13 @@
-ubuntu:24.04
-rockylinux:9.3
-fluent/fluent-bit:4.0.3-amd64
-nginx:1.27
-busybox:1.37.0
-alpine:3.22.0
-curlimages/curl:8.14.1
-mysql:9.0.0
-mysql:8.4.5
-mysql:8.0.42
-openjdk:21-jdk-oracle
-openjdk:21-jdk
-openjdk:8-jdk
+# ubuntu:24.04
+# rockylinux:9.3
+# fluent/fluent-bit:4.0.3-amd64
+# nginx:1.27
+# busybox:1.37.0
+# alpine:3.22.0
+# curlimages/curl:8.14.1
+# mysql:9.0.0
+# mysql:8.4.5
+# mysql:8.0.42
+# openjdk:21-jdk-oracle
+# openjdk:21-jdk
+# openjdk:8-jdk
