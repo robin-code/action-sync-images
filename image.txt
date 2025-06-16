@@ -7,10 +7,10 @@
 #gradle:8.5-jdk21
 #openjdk:8-jdk
 #busybox:latest
-appleboy/drone-scp:latest
-appleboy/drone-ssh:latest
+# appleboy/drone-scp:latest
+# appleboy/drone-ssh:latest
 #docker.io/nginx:1.25.3
-alpine:latest
+# alpine:latest
 #devops
 #cr.fluentbit.io/fluent/fluent-bit:4.0.3
 #mysql:5.7.44
