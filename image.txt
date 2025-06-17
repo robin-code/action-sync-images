@@ -11,3 +11,5 @@
 # openjdk:21-jdk-oracle
 # openjdk:21-jdk
 # openjdk:8-jdk
+linuxserver/nextcloud:31.0.6
+linuxserver/calibre-web:0.6.24
