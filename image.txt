@@ -6,7 +6,7 @@ docker.gitea.com/gitea:1.24.0
 linuxserver/grocy:latest
 linuxserver/calibre-web:0.6.24
 bitnami/openldap:2.6.9
-mqx/emqx:5.8.5
+emqx/emqx:5.8.5
 deluan/navidrome:0.54.5
 louislam/uptime-kuma:1.23.16
 
