@@ -1,4 +1,4 @@
-cr.fluentbit.io/fluent/fluent-bit:4.0.3
+# cr.fluentbit.io/fluent/fluent-bit:4.0.3
 # ghcr.io/immich-app/immich-server:release
 # ghcr.io/immich-app/immich-machine-learning:release
 # ghcr.io/immich-app/immich-server:v1.135.0
