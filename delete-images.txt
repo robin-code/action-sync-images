@@ -37,3 +37,5 @@ registry.k8s.io/kube-controller-manager:v1.32.3
 registry.k8s.io/kube-scheduler:v1.31.1
 registry.k8s.io/kube-scheduler:v1.32.3
 registry.k8s.io/ingress-nginx/controller:v1.11.2
+harbor.riji.life/library/fluent-bit:4.0.1
+docker.io/nacos/nacos-server:v2.4.0.1
