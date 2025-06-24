@@ -18,8 +18,8 @@
 # deluan/navidrome:latest
 # louislam/uptime-kuma:1.23.16
 # mysql/mysql-server:5.7
-crazymax/cloudflared:latest
-pihole/pihole:2025.04.0
+# crazymax/cloudflared:latest
+# pihole/pihole:2025.04.0
 
 
 ## k8s app
