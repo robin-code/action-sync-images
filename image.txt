@@ -10,6 +10,14 @@
 # deluan/navidrome:0.54.5
 # louislam/uptime-kuma:1.23.16
 
+lscr.io/linuxserver/grocy:latest
+linuxserver/calibre-web:0.6.24
+bitnami/openldap:2.6.10
+emqx/emqx:5.8.5
+ghcr.io/huginn/huginn:latest
+deluan/navidrome:latest
+louislam/uptime-kuma:1.23.16
+mysql/mysql-server:5.7
 
 ## k8s app
 # docker.io/library/nginx:1.28.0-alpine
