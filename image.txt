@@ -26,7 +26,11 @@ longhornio/longhorn-share-manager:v1.9.0
 longhornio/longhorn-ui:v1.9.0
 longhornio/longhorn-engine:v1.9.0
 longhornio/longhorn-instance-manager:v1.9.0
-
+longhornio/csi-resizer:v1.13.2
+longhornio/livenessprobe:v2.15.0
+longhornio/csi-node-driver-registrar:v2.13.0
+longhornio/csi-node-driver-registrar:v2.13.0
+longhornio/csi-provisioner:v5.2.0
 ## k8s app
 # docker.io/library/nginx:1.28.0-alpine
 # docker.io/bitnami/elasticsearch:8.17.4-debian-12-r0
