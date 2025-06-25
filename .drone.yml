@@ -156,9 +156,9 @@ steps:
         from_secret: HARBOR_PASSWORD
       #原始镜像仓库
       IMAGE_REGISTRY_NAME_SPACE: registry.cn-hangzhou.aliyuncs.com/robin-public
-      HARBOR_REGISTRY: harbor.riji.life
+      HARBOR_REGISTRY: docker.riji.life
       #自建harbor仓库地址
-      HARBOR_IMAGE_REGISTRY_NAME_SPACE: harbor.riji.life/robin-public
+      HARBOR_IMAGE_REGISTRY_NAME_SPACE: docker.riji.life/robin-public
     commands:
       - echo "开始同步镜像到 Harbor..."
       - chmod +x ./sync_to_harbor.sh
