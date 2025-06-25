@@ -20,7 +20,12 @@
 # mysql/mysql-server:5.7
 # crazymax/cloudflared:latest
 # pihole/pihole:2025.04.0
-
+ekofr/pihole-exporter:v1.0.0
+longhornio/longhorn-manager:v1.9.0
+longhornio/longhorn-share-manager:v1.9.0
+longhornio/longhorn-ui:v1.9.0
+longhornio/longhorn-engine:v1.9.0
+longhornio/longhorn-instance-manager:v1.9.0
 
 ## k8s app
 # docker.io/library/nginx:1.28.0-alpine
