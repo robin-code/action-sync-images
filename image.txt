@@ -92,6 +92,7 @@
 
 # quay.io/argoproj/argocd:v3.0.6
 # ghcr.io/dexidp/dex:v2.41.1
+ghcr.io/dexidp/dex:v2.43.1
 # redis:7.0.15-alpine
 # redis:7.2.7-alpine
 # quay.io/prometheus/alertmanager:v0.27.0
