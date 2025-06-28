@@ -1,5 +1,13 @@
 # ghcr.io/immich-app/immich-server:release
 # ghcr.io/immich-app/immich-machine-learning:release
+docker.io/bitnami/redis:8.0.2-debian-12-r3
+
+goharbor/harbor-jobservice:v2.13.1
+goharbor/harbor-core:v2.13.1
+goharbor/trivy-adapter-photon:v2.13.1
+goharbor/registry-photon:v2.13.1
+goharbor/harbor-registryctl:v2.13.1
+goharbor/harbor-portal:v2.13.1
 
 # docker.gitea.com/gitea:1.24.0
 # linuxserver/grocy:latest
