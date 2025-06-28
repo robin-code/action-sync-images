@@ -90,10 +90,10 @@
 # registry.k8s.io/kube-scheduler:v1.33.1
 # registry.k8s.io/kube-apiserver:v1.33.1
 
-# quay.io/argoproj/argocd:v2.14.6
+quay.io/argoproj/argocd:v3.0.6
 # ghcr.io/dexidp/dex:v2.41.1
 # redis:7.0.15-alpine
-
+redis:7.2.7-alpine
 # quay.io/prometheus/alertmanager:v0.27.0
 # quay.io/prometheus-operator/prometheus-config-reloader:v0.76.1
 # quay.io/kiwigrid/k8s-sidecar:1.27.4
