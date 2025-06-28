@@ -90,10 +90,10 @@
 # registry.k8s.io/kube-scheduler:v1.33.1
 # registry.k8s.io/kube-apiserver:v1.33.1
 
-quay.io/argoproj/argocd:v3.0.6
+# quay.io/argoproj/argocd:v3.0.6
 # ghcr.io/dexidp/dex:v2.41.1
 # redis:7.0.15-alpine
-redis:7.2.7-alpine
+# redis:7.2.7-alpine
 # quay.io/prometheus/alertmanager:v0.27.0
 # quay.io/prometheus-operator/prometheus-config-reloader:v0.76.1
 # quay.io/kiwigrid/k8s-sidecar:1.27.4
@@ -109,7 +109,7 @@ redis:7.2.7-alpine
 # docker.io/bats/bats:v1.4.1
 # quay.io/prometheus/alertmanager:v0.28.1
 # quay.io/prometheus/prometheus:v3.4.1
-quay.io/prometheus-operator/prometheus-config-reloader:v0.83.0
+# quay.io/prometheus-operator/prometheus-config-reloader:v0.83.0
 # quay.io/jetstack/cert-manager-webhook:v1.17.2
 # quay.io/jetstack/cert-manager-cainjector:v1.17.2
 
