@@ -1,7 +1,7 @@
-ghcr.io/immich-app/immich-server:release
-ghcr.io/immich-app/immich-machine-learning:release
-docker.io/redis:6.2-alpine
-docker.io/tensorchord/pgvecto-rs:pg14-v0.2.0
+# ghcr.io/immich-app/immich-server:release
+# ghcr.io/immich-app/immich-machine-learning:release
+# docker.io/redis:6.2-alpine
+# docker.io/tensorchord/pgvecto-rs:pg14-v0.2.0
 
 #docker.io/bitnami/redis:8.0.2-debian-12-r3
 
@@ -95,7 +95,7 @@ docker.io/tensorchord/pgvecto-rs:pg14-v0.2.0
 
 # quay.io/argoproj/argocd:v3.0.6
 # ghcr.io/dexidp/dex:v2.41.1
-ghcr.io/dexidp/dex:v2.43.1
+# ghcr.io/dexidp/dex:v2.43.1
 # redis:7.0.15-alpine
 # redis:7.2.7-alpine
 # quay.io/prometheus/alertmanager:v0.27.0
