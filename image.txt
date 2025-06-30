@@ -8,7 +8,7 @@
 #goharbor/registry-photon:v2.13.1
 #goharbor/harbor-registryctl:v2.13.1
 #goharbor/harbor-portal:v2.13.1
-
+goharbor/redis-photon:v2.13.1
 # docker.gitea.com/gitea:1.24.0
 # linuxserver/grocy:latest
 # linuxserver/calibre-web:0.6.24
