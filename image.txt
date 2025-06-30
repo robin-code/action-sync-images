@@ -1,6 +1,9 @@
-# ghcr.io/immich-app/immich-server:release
-# ghcr.io/immich-app/immich-machine-learning:release
-# docker.io/bitnami/redis:8.0.2-debian-12-r3
+ghcr.io/immich-app/immich-server:release
+ghcr.io/immich-app/immich-machine-learning:release
+docker.io/redis:6.2-alpine
+docker.io/tensorchord/pgvecto-rs:pg14-v0.2.0
+
+#docker.io/bitnami/redis:8.0.2-debian-12-r3
 
 #goharbor/harbor-jobservice:v2.13.1
 #goharbor/harbor-core:v2.13.1
