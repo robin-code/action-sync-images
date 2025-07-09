@@ -43,7 +43,7 @@ jobs:
       - name: Use Skopeo Tools Sync Image to Aliyun Cr
         env:
           IMAGE_REGISTRY_NAME_SPACE: ${{ vars.DOCKER_REGISTRY }}/${{ vars.REGISTRY_NAME_SPACE }}
-        run: bash sync_to_aliyun.sh
+        run: bash scripts/sync_to_aliyun.sh
 
 #      - name: Trigger Drone build
 #        run: |

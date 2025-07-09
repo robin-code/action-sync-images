@@ -27,4 +27,4 @@ while IFS= read -r image || [[ -n "$image" ]]; do
   
   echo "🚀 同步镜像: $image -> $TARGET_IMAGE"
   skopeo copy docker://$image docker://$TARGET_IMAGE
-done < image.txt
+done < image.yaml
