@@ -3,7 +3,7 @@ type: kubernetes
 name: clean node1
 
 steps:
-  - name: upload delete-images.txt to node1
+  - name: upload delete-images.yaml to node1
     image: docker.riji.life/robin-public/appleboy/drone-scp
     settings:
       host: 10.0.0.111
@@ -11,7 +11,7 @@ steps:
       port: 22
       key:
         from_secret: SSH_PRIVATE_KEY
-      source: delete-images.txt
+      source: delete-images.yaml
       target: /home/robin/
   - name: cleanup images on node1
     image: docker.riji.life/robin-public/appleboy/drone-ssh
@@ -22,14 +22,14 @@ steps:
       key:
         from_secret: SSH_PRIVATE_KEY
       script:
-        - crictl rmi $(cat /home/robin/delete-images.txt) || true
+        - crictl rmi $(cat /home/robin/delete-images.yaml) || true
         - for img in $(crictl images | grep '<none>' | awk '{print $3}'); do crictl rmi $img || true; done
 ---
 kind: pipeline
 type: kubernetes
 name: clean node2
 steps:
-  - name: upload delete-images.txt to node2
+  - name: upload delete-images.yaml to node2
     image: docker.riji.life/robin-public/appleboy/drone-scp
     settings:
       host: 10.0.0.112
@@ -37,7 +37,7 @@ steps:
       port: 22
       key:
         from_secret: SSH_PRIVATE_KEY
-      source: delete-images.txt
+      source: delete-images.yaml
       target: /home/robin/
   - name: cleanup images on node2
     image: docker.riji.life/robin-public/appleboy/drone-ssh
@@ -48,14 +48,14 @@ steps:
       key:
         from_secret: SSH_PRIVATE_KEY
       script:
-        - crictl rmi $(cat /home/robin/delete-images.txt) || true
+        - crictl rmi $(cat /home/robin/delete-images.yaml) || true
         - for img in $(crictl images | grep '<none>' | awk '{print $3}'); do crictl rmi $img || true; done
 ---
 kind: pipeline
 type: kubernetes
 name: clean node3
 steps:
-  - name: upload delete-images.txt to node3
+  - name: upload delete-images.yaml to node3
     image: docker.riji.life/robin-public/appleboy/drone-scp
     settings:
       host: 10.0.0.113
@@ -63,7 +63,7 @@ steps:
       port: 22
       key:
         from_secret: SSH_PRIVATE_KEY
-      source: delete-images.txt
+      source: delete-images.yaml
       target: /home/robin/
   - name: cleanup images on node3
     image: docker.riji.life/robin-public/appleboy/drone-ssh
@@ -74,14 +74,14 @@ steps:
       key:
         from_secret: SSH_PRIVATE_KEY
       script:
-        - crictl rmi $(cat /home/robin/delete-images.txt) || true
+        - crictl rmi $(cat /home/robin/delete-images.yaml) || true
         - for img in $(crictl images | grep '<none>' | awk '{print $3}'); do crictl rmi $img || true; done
 ---
 kind: pipeline
 type: kubernetes
 name: clean node4
 steps:
-  - name: upload delete-images.txt to node4
+  - name: upload delete-images.yaml to node4
     image: docker.riji.life/robin-public/appleboy/drone-scp
     settings:
       host: 10.0.0.157
@@ -89,7 +89,7 @@ steps:
       port: 22
       key:
         from_secret: SSH_PRIVATE_KEY
-      source: delete-images.txt
+      source: delete-images.yaml
       target: /home/robin/
   - name: cleanup images on node4
     image: docker.riji.life/robin-public/appleboy/drone-ssh
@@ -100,14 +100,14 @@ steps:
       key:
         from_secret: SSH_PRIVATE_KEY
       script:
-        - crictl rmi $(cat /home/robin/delete-images.txt) || true
+        - crictl rmi $(cat /home/robin/delete-images.yaml) || true
         - for img in $(crictl images | grep '<none>' | awk '{print $3}'); do crictl rmi $img || true; done
 ---
 kind: pipeline
 type: kubernetes
 name: clean node5
 steps:
-  - name: upload delete-images.txt to node5
+  - name: upload delete-images.yaml to node5
     image: docker.riji.life/robin-public/appleboy/drone-scp
     settings:
       host: 10.0.0.158
@@ -115,7 +115,7 @@ steps:
       port: 22
       key:
         from_secret: SSH_PRIVATE_KEY
-      source: delete-images.txt
+      source: delete-images.yaml
       target: /home/robin/
   - name: cleanup images on node5
     image: docker.riji.life/robin-public/appleboy/drone-ssh
@@ -126,7 +126,7 @@ steps:
       key:
         from_secret: SSH_PRIVATE_KEY
       script:
-        - crictl rmi $(cat /home/robin/delete-images.txt) || true
+        - crictl rmi $(cat /home/robin/delete-images.yaml) || true
 ---
 kind: pipeline
 type: kubernetes
@@ -161,8 +161,8 @@ steps:
       HARBOR_IMAGE_REGISTRY_NAME_SPACE: docker.riji.life/robin-public
     commands:
       - echo "开始同步镜像到 Harbor..."
-      - chmod +x ./sync_to_harbor.sh
-      - ./sync_to_harbor.sh
+      - chmod +x ./scripts/sync_to_harbor.sh
+      - ./scripts/sync_to_harbor.sh
       - cat /data/sync_result.txt
   - name: comment synced images
     image: docker.riji.life/robin-public/alpine
