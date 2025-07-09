@@ -174,11 +174,11 @@ steps:
       - echo "结果是：$result"
       - |
         if [ "$result" = "none" ]; then
-          echo "✅ 没有需要同步的镜像，跳过 image.txt 修改"
+          echo "✅ 没有需要同步的镜像，跳过 image.yaml 修改"
           exit 0
         fi
-      - cp image.txt image.txt.bak
-      - awk '/^[[:space:]]*#/ || /^[[:space:]]*$/ {print $0; next} {print "# "$0}' image.txt.bak > image.txt
+      - cp image.yaml image.yaml.bak
+      - awk '/^[[:space:]]*#/ || /^[[:space:]]*$/ {print $0; next} {print "# "$0}' image.yaml.bak > image.yaml
 
   - name: commit and push
     image: docker.riji.life/robin-public/alpine/git
@@ -199,12 +199,12 @@ steps:
       - echo "结果是：$result"
       - |
         if [ "$result" = "none" ]; then
-          echo "✅ 没有需要同步的镜像，跳过 image.txt 修改"
+          echo "✅ 没有需要同步的镜像，跳过 image.yaml 修改"
           exit 0
         fi
       - git config user.email $DRONE_BOT_BOT_EMAIL
       - git config user.name $DRONE_BOT_BOT_NAME
-      - git add image.txt
+      - git add image.yaml
       - 'git commit -m "ci: 标记已同步的镜像为注释状态" || echo "No changes to commit"'
       - git remote set-url origin https://$GIT_USERNAME:$GIT_TOKEN@git.riji.life/DevOps/action-sync-images.git
       - git push origin HEAD:${DRONE_BRANCH}
