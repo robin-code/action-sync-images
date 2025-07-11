@@ -1,9 +1,9 @@
-ghcr.io/tektoncd/pipeline/resolvers-ff86b24f130c42b88983d3c13993056d:v1.2.0@sha256:939102e67d09d277bdf19bc83b5fbc45ed3cbcf840017956b71995c3e68ed289
-ghcr.io/tektoncd/pipeline/webhook-d4749e605405422fd87700164e31b2d1:v1.2.0@sha256:4a147b3f1cc208528f8bb8849c62035121c14328928a5783e825b80007c03484
-ghcr.io/tektoncd/pipeline/events-a9042f7efb0cbade2a868a1ee5ddd52c:v1.2.0@sha256:c80b901bf9d03c030a67c4685830a331598b2575c46eda871b42002d1f9f73c2
-ghcr.io/tektoncd/pipeline/controller-10a3e32792f33651396d02b6855a6e36:v1.2.0@sha256:4b7165f0e05309a8762f6de3b87ebbcde2e95cf7c40e45384715a8a0b5a34334
-ghcr.io/tektoncd/triggers/webhook-dd1edc925ee1772a9f76e2c1bc291ef6:v0.32.0@sha256:c2d7b5bcdde08b61fc5d8d79c29aa9fc8d9a9e0e272f6d14a0dc52279ab7d319
-ghcr.io/tektoncd/triggers/controller-f656ca31de179ab913fa76abc255c315:v0.32.0@sha256:92f074a2dd84a41506d52b30a6b8707913b1173855698fd2a65ba06676ba0715
+ghcr.io/tektoncd/pipeline/resolvers-ff86b24f130c42b88983d3c13993056d:v1.2.0
+ghcr.io/tektoncd/pipeline/webhook-d4749e605405422fd87700164e31b2d1:v1.2.0
+ghcr.io/tektoncd/pipeline/events-a9042f7efb0cbade2a868a1ee5ddd52c:v1.2.0
+ghcr.io/tektoncd/pipeline/controller-10a3e32792f33651396d02b6855a6e36:v1.2.0
+ghcr.io/tektoncd/triggers/webhook-dd1edc925ee1772a9f76e2c1bc291ef6:v0.32.0
+ghcr.io/tektoncd/triggers/controller-f656ca31de179ab913fa76abc255c315:v0.32.0
 
 
 # langgenius/dify-sandbox:0.2.12
