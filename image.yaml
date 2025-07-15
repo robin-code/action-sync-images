@@ -4,8 +4,8 @@
 #ghcr.io/tektoncd/pipeline/controller-10a3e32792f33651396d02b6855a6e36:v1.2.0
 #ghcr.io/tektoncd/triggers/webhook-dd1edc925ee1772a9f76e2c1bc291ef6:v0.32.0
 #ghcr.io/tektoncd/triggers/controller-f656ca31de179ab913fa76abc255c315:v0.32.0
-ghcr.io/tektoncd/pipeline/events-a9042f7efb0cbade2a868a1ee5ddd52c:v1.2.0
-
+#ghcr.io/tektoncd/pipeline/events-a9042f7efb0cbade2a868a1ee5ddd52c:v1.2.0
+lscr.io/linuxserver/calibre-web:latest
 # langgenius/dify-sandbox:0.2.12
 # langgenius/dify-api:1.5.0
 # langgenius/dify-plugin-daemon:0.1.2-local
