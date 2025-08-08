@@ -1,3 +1,6 @@
+# ghcr.io/immich-app/immich-machine-learning:v1.138.0
+# ghcr.io/immich-app/immich-server:v1.138.0
+
 #ghcr.io/tektoncd/pipeline/resolvers-ff86b24f130c42b88983d3c13993056d:v1.2.0
 #ghcr.io/tektoncd/pipeline/webhook-d4749e605405422fd87700164e31b2d1:v1.2.0
 #ghcr.io/tektoncd/pipeline/events-a9042f7efb0cbade2a868a1ee5ddd52c:v1.2.0
@@ -14,20 +17,21 @@
 # docker.io/bitnami/redis:7.0.11-debian-11-r12
 # docker.io/bitnami/postgresql:15.3.0-debian-11-r7
 # docker.io/semitechnologies/weaviate:1.19.1
-bitnami/kafka:3.6
+#bitnami/kafka:3.6
 # anapsix/alpine-java:8_server-jre_unlimited
 # azul/zulu-openjdk-alpine:8
 # azul/zulu-openjdk-alpine:11
-
 # docker.io/redis:6.2-alpine
 # docker.io/bitnami/redis:8.0.2-debian-12-r3
-# goharbor/harbor-jobservice:v2.13.1
-# goharbor/harbor-core:v2.13.1
-# goharbor/trivy-adapter-photon:v2.13.1
-# goharbor/registry-photon:v2.13.1
-# goharbor/harbor-registryctl:v2.13.1
-# goharbor/harbor-portal:v2.13.1
-# goharbor/redis-photon:v2.13.1
+# goharbor/harbor-core:v2.13.2
+# goharbor/harbor-jobservice:v2.13.2
+# goharbor/harbor-portal:v2.13.2
+# goharbor/registry-photon:v2.13.2
+# goharbor/nginx-photon:v2.13.2
+# goharbor/harbor-exporter:v2.13.2
+# goharbor/trivy-adapter-photon:v2.13.2
+# goharbor/harbor-registryctl:v2.13.2
+# goharbor/redis-photon:v2.13.2
 # docker.gitea.com/gitea:1.24.0
 # emqx/emqx:5.8.5
 # louislam/uptime-kuma:1.23.16
@@ -186,3 +190,7 @@ bitnami/kafka:3.6
 # registry.k8s.io/kube-controller-manager:v1.33.2
 # registry.k8s.io/kube-scheduler:v1.33.2
 # registry.k8s.io/kube-proxy:v1.33.2
+#tdengine/tsdb:latest
+#emqx/emqx-enterprise:5.10.0
+#emqx/emqx-operator-controller:2.2.29
+
