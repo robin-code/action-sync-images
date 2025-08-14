@@ -187,5 +187,7 @@
 # registry.k8s.io/kube-controller-manager:v1.33.2
 # registry.k8s.io/kube-scheduler:v1.33.2
 # registry.k8s.io/kube-proxy:v1.33.2
-emqx/emqx-enterprise:5.10.0
-tdengine/tsdb:3.3.6.13
+#tdengine/tsdb:latest
+#emqx/emqx-enterprise:5.10.0
+emqx/emqx-operator-controller:2.2.29
+
