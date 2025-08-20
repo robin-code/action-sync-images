@@ -124,7 +124,8 @@ harbor.riji.life/robin-public/busybox:latest
 harbor.riji.life/robin-public/registry.k8s.io/metrics-server/metrics-server:v0.7.0
 docker.riji.life/robin-public/ghcr.io/immich-app/immich-server:v1.138.0
 docker.riji.life/robin-public/ghcr.io/immich-app/immich-machine-learning:v1.138.0
-
+docker.riji.life/robin-public/pihole/pihole:2025.04.0
+harbor.riji.life/robin-public/pihole/pihole:2025.04.0
 docker.io/longhornio/csi-node-driver-registrar:v2.13.0
 docker.io/longhornio/csi-provisioner:v5.2.0
 docker.io/longhornio/csi-resizer:v1.13.2
@@ -141,6 +142,8 @@ docker.riji.life/robin-public/registry.k8s.io/cpa/cluster-proportional-autoscale
 registry.k8s.io/kube-state-metrics/kube-state-metrics:v2.13.0
 docker.riji.life/robin-public/registry.k8s.io/coredns/coredns:v1.12.0
 docker.riji.life/robin-public/quay.io/prometheus/node-exporter:v1.9.1
+docker.riji.life/robin-public/quay.io/argoproj/argocd:v3.0.6
+
 registry.k8s.io/pause:3.10
 registry.k8s.io/kube-proxy:v1.33.2
 registry.k8s.io/kube-proxy:v1.33.3
