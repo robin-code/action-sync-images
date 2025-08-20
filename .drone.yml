@@ -184,7 +184,6 @@ steps:
             rm /home/robin/delete-images.yaml
           " 
 ---
----
 kind: pipeline
 type: kubernetes
 name: clean node5
