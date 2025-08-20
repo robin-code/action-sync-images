@@ -126,6 +126,8 @@ docker.riji.life/robin-public/ghcr.io/immich-app/immich-server:v1.138.0
 docker.riji.life/robin-public/ghcr.io/immich-app/immich-machine-learning:v1.138.0
 docker.riji.life/robin-public/pihole/pihole:2025.04.0
 harbor.riji.life/robin-public/pihole/pihole:2025.04.0
+harbor.riji.life/robin-public/docker.io/bitnami/redis:8.0.2-debian-12-r3
+
 docker.io/longhornio/csi-node-driver-registrar:v2.13.0
 docker.io/longhornio/csi-provisioner:v5.2.0
 docker.io/longhornio/csi-resizer:v1.13.2
@@ -143,6 +145,15 @@ registry.k8s.io/kube-state-metrics/kube-state-metrics:v2.13.0
 docker.riji.life/robin-public/registry.k8s.io/coredns/coredns:v1.12.0
 docker.riji.life/robin-public/quay.io/prometheus/node-exporter:v1.9.1
 docker.riji.life/robin-public/quay.io/argoproj/argocd:v3.0.6
+docker.riji.life/robin-public/ghcr.io/immich-app/immich-machine-learning:release
+docker.riji.life/robin-public/ghcr.io/immich-app/immich-server:release
+registry.k8s.io/kube-proxy:v1.33.0
+registry.k8s.io/kube-scheduler:v1.33.0
+registry.k8s.io/kube-controller-manager:v1.33.0
+
+registry.k8s.io/kube-proxy:v1.33.1
+registry.k8s.io/kube-scheduler:v1.33.1
+registry.k8s.io/kube-controller-manager:v1.33.1
 
 registry.k8s.io/pause:3.10
 registry.k8s.io/kube-proxy:v1.33.2
@@ -150,10 +161,25 @@ registry.k8s.io/kube-proxy:v1.33.3
 registry.k8s.io/kube-scheduler:v1.33.3
 registry.k8s.io/kube-controller-manager:v1.33.3
 docker.riji.life/library/drone-maven-demo
+
+k8s.m.daocloud.io/kube-proxy:v1.33.0
+k8s.m.daocloud.io/kube-apiserver:v1.33.0
+k8s.m.daocloud.io/kube-controller-manager:v1.33.0
+k8s.m.daocloud.io/kube-scheduler:v1.33.0
+
+
+k8s.m.daocloud.io/kube-proxy:v1.33.1
+k8s.m.daocloud.io/kube-apiserver:v1.33.1
+k8s.m.daocloud.io/kube-controller-manager:v1.33.1
+k8s.m.daocloud.io/kube-scheduler:v1.33.1
+
+
 k8s.m.daocloud.io/kube-proxy:v1.33.2
 k8s.m.daocloud.io/kube-apiserver:v1.33.2
 k8s.m.daocloud.io/kube-controller-manager:v1.33.2
 k8s.m.daocloud.io/kube-scheduler:v1.33.2
+
+
 
 k8s.m.daocloud.io/kube-proxy:v1.33.3
 k8s.m.daocloud.io/kube-apiserver:v1.33.3
@@ -178,3 +204,11 @@ quay.io/kiwigrid/k8s-sidecar:1.27.4
 
 quay.io/argoproj/argocd:v2.14.6
 quay.io/argoproj/argocd:v3.0.11
+
+
+ghcr.io/immich-app/immich-serverv1.136.0
+ghcr.io/immich-app/immich-machine-learning:v1.136.0
+
+
+ghcr.io/immich-app/immich-serverv1.137.3
+ghcr.io/immich-app/immich-machine-learning:v1.137.3
