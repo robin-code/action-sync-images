@@ -38,22 +38,22 @@ steps:
 ---
 kind: pipeline
 type: kubernetes
-name: clean node2
+name: clean node8
 steps:
-  - name: upload delete-images.yaml to node2
+  - name: upload delete-images.yaml to node8
     image: docker.riji.life/robin-public/appleboy/drone-scp
     settings:
-      host: 10.0.0.112
+      host: 10.0.0.42
       username: robin
       port: 22
       key:
         from_secret: SSH_PRIVATE_KEY
       source: delete-images.yaml
       target: /home/robin/
-  - name: cleanup images on node2
+  - name: cleanup images on node8
     image: docker.riji.life/robin-public/appleboy/drone-ssh
     settings:
-      host: 10.0.0.112
+      host: 10.0.0.42
       username: robin
       port: 22
       key:
@@ -75,22 +75,22 @@ steps:
 ---
 kind: pipeline
 type: kubernetes
-name: clean node3
+name: clean node9
 steps:
-  - name: upload delete-images.yaml to node3
+  - name: upload delete-images.yaml to node9
     image: docker.riji.life/robin-public/appleboy/drone-scp
     settings:
-      host: 10.0.0.113
+      host: 10.0.0.43
       username: robin
       port: 22
       key:
         from_secret: SSH_PRIVATE_KEY
       source: delete-images.yaml
       target: /home/robin/
-  - name: cleanup images on node3
+  - name: cleanup images on node9
     image: docker.riji.life/robin-public/appleboy/drone-ssh
     settings:
-      host: 10.0.0.113
+      host: 10.0.0.43
       username: robin
       port: 22
       key:
