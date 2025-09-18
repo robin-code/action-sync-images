@@ -1,6 +1,12 @@
 ghcr.io/sysadminsmedia/homebox:latest
-#ghcr.io/immich-app/immich-machine-learning:v1.142.0
-#ghcr.io/immich-app/immich-server:v1.142.0
+ghcr.io/immich-app/immich-machine-learning:v1.142.1
+ghcr.io/immich-app/immich-server:v1.142.1
+
+victoriametrics/victoria-metrics:v1.95.1
+postgres:15
+apache/hertzbeat-collector:1.7.2
+apache/hertzbeat:1.7.2
+
 #kubesphere/ks-installer:v3.2.1
 #ghcr.io/flannel-io/flannel:v0.27.3
 #ghcr.io/flannel-io/flannel-cni-plugin:v1.7.1-flannel1
