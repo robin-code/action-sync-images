@@ -1,5 +1,5 @@
 #docker.io/bitnami/kafka:4.0.0-debian-12-r0
-provectuslabs/kafka-ui:latest
+# provectuslabs/kafka-ui:latest
 #containous/whoami:latest
 #quay.io/oauth2-proxy/oauth2-proxy:v7.7.1
 #docker.io/bitnami/os-shell:12-debian-12-r40
