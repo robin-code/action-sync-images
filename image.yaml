@@ -5,7 +5,8 @@
 #ghcr.io/sysadminsmedia/homebox:latest
 #ghcr.io/immich-app/immich-machine-learning:v1.143.0
 #ghcr.io/immich-app/immich-server:v1.143.0
-ghcr.io/tensorchord/cloudnative-pgvecto.rs:16.5-v0.3.0
+#ghcr.io/tensorchord/cloudnative-pgvecto.rs:16.5-v0.3.0
+nacos/nacos-server:v1.4.7
 #
 #victoriametrics/victoria-metrics:v1.95.1
 #postgres:15
