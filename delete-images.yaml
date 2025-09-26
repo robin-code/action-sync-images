@@ -53,7 +53,7 @@ ghcr.io/kube-vip/kube-vip:v0.8.9
 ghcr.io/kube-vip/kube-vip:v0.9.0
 
 cr.fluentbit.io/fluent/fluent-bit:4.0.3
-
+docker.riji.life/robin-public/cr.fluentbit.io/fluent/fluent-bit:4.0.7
 
 
 registry.cn-hangzhou.aliyuncs.com/robin-registry/react-guli-admin:latest
