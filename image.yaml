@@ -155,7 +155,8 @@
 # quay.io/jetstack/cert-manager-cainjector:v1.17.2
 
 # docker.io/traefik:v3.4.0
-# cr.fluentbit.io/fluent/fluent-bit:4.0.3
+#cr.fluentbit.io/fluent/fluent-bit:4.0.3
+cr.fluentbit.io/fluent/fluent-bit:4.0.7
 
 # docker.io/kubernetesui/dashboard-web:1.7.0
 # docker.io/kubernetesui/dashboard-api:1.13.0
