@@ -185,10 +185,20 @@ docker.io/bitnami/keycloak:26.2.5-debian-12-r1
 docker.gitea.com/gitea:1.24.0
 docker.gitea.com/gitea:1.24.0-rootless
 
-docker.io/goharbor/harbor-core:v2.13.1
-docker.io/goharbor/harbor-jobservice:v2.13.1
-docker.io/goharbor/harbor-registryctl:v2.13.1
-docker.io/goharbor/registry-photon:v2.13.1
+#docker.io/goharbor/harbor-core:v2.13.1
+#docker.io/goharbor/harbor-jobservice:v2.13.1
+#docker.io/goharbor/harbor-registryctl:v2.13.1
+#docker.io/goharbor/registry-photon:v2.13.1
+registry.cn-hangzhou.aliyuncs.com/robin-public/goharbor_harbor-core:v2.13.2
+registry.cn-hangzhou.aliyuncs.com/robin-public/goharbor_redis-photon:v2.13.2
+registry.cn-hangzhou.aliyuncs.com/robin-public/goharbor_trivy-adapter-photon:v2.13.2
+registry.cn-hangzhou.aliyuncs.com/robin-public/goharbor_registry-photon:v2.13.2
+registry.cn-hangzhou.aliyuncs.com/robin-public/goharbor_harbor-registryctl:v2.13.2
+registry.cn-hangzhou.aliyuncs.com/robin-public/goharbor_harbor-jobservice:v2.13.2
+registry.cn-hangzhou.aliyuncs.com/robin-public/goharbor_harbor-portal:v2.13.2
+registry.cn-hangzhou.aliyuncs.com/robin-public/goharbor_harbor-core:v2.13.2
+
+
 
 docker.riji.life/robin-public/pihole/pihole:2025.04.0
 docker.io/bitnami/redis:7.2.5-debian-12-r4
