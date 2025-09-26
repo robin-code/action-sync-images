@@ -60,16 +60,15 @@
 # azul/zulu-openjdk-alpine:11
 # docker.io/redis:6.2-alpine
 # docker.io/bitnami/redis:8.0.2-debian-12-r3
-# goharbor/harbor-core:v2.13.2
-# goharbor/harbor-jobservice:v2.13.2
-# goharbor/harbor-portal:v2.13.2
-# goharbor/registry-photon:v2.13.2
-# goharbor/nginx-photon:v2.13.2
-# goharbor/harbor-exporter:v2.13.2
-# goharbor/trivy-adapter-photon:v2.13.2
-# goharbor/harbor-registryctl:v2.13.2
-# goharbor/redis-photon:v2.13.2
-# docker.gitea.com/gitea:1.24.0
+goharbor/harbor-core:v2.14.0
+goharbor/harbor-jobservice:v2.14.0
+goharbor/harbor-portal:v2.14.0
+goharbor/registry-photon:v2.14.0
+goharbor/nginx-photon:v2.14.0
+goharbor/harbor-exporter:v2.14.0
+goharbor/trivy-adapter-photon:v2.14.0
+goharbor/harbor-registryctl:v2.14.0
+goharbor/redis-photon:v2.14.0
 # emqx/emqx:5.8.5
 # louislam/uptime-kuma:1.23.16
 # bitnami/openldap:2.6.10
