@@ -1,9 +1,8 @@
-langgenius/dify-api:1.6.0
-langgenius/dify-web:1.6.0
-langgenius/dify-sandbox:0.2.12
-langgenius/dify-plugin-daemon:0.1.3-local
+#langgenius/dify-api:1.6.0
+#langgenius/dify-web:1.6.0
+#langgenius/dify-sandbox:0.2.12
+#langgenius/dify-plugin-daemon:0.1.3-local
 
-#docker.io/bitnami/kafka:4.0.0-debian-12-r0
 #docker.io/bitnami/kafka:4.0.0-debian-12-r0
 # provectuslabs/kafka-ui:latest
 #containous/whoami:latest
