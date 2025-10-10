@@ -1,3 +1,4 @@
+
 docker.riji.life/robin-public/ghcr.io/immich-app/immich-server:v1.138.0
 docker.riji.life/robin-public/ghcr.io/immich-app/immich-server:v1.138.1
 docker.riji.life/robin-public/ghcr.io/immich-app/immich-server:v1.139.2
@@ -5,6 +6,8 @@ docker.riji.life/robin-public/ghcr.io/immich-app/immich-server:v1.139.4
 docker.riji.life/robin-public/ghcr.io/immich-app/immich-server:v1.140.1
 docker.riji.life/robin-public/ghcr.io/immich-app/immich-server:v1.141.1
 docker.riji.life/robin-public/ghcr.io/immich-app/immich-server:v1.142.0
+docker.riji.life/robin-public/ghcr.io/immich-app/immich-server:v1.143.0
+
 docker.riji.life/robin-public/ghcr.io/immich-app/immich-machine-learning:v1.138.0
 docker.riji.life/robin-public/ghcr.io/immich-app/immich-machine-learning:v1.138.1
 docker.riji.life/robin-public/ghcr.io/immich-app/immich-machine-learning:v1.139.2
@@ -12,6 +15,7 @@ docker.riji.life/robin-public/ghcr.io/immich-app/immich-machine-learning:v1.139.
 docker.riji.life/robin-public/ghcr.io/immich-app/immich-machine-learning:v1.140.1
 docker.riji.life/robin-public/ghcr.io/immich-app/immich-machine-learning:v1.141.1
 docker.riji.life/robin-public/ghcr.io/immich-app/immich-machine-learning:v1.142.0
+docker.riji.life/robin-public/ghcr.io/immich-app/immich-machine-learning:v1.143.0
 
 
 registry.cn-hangzhou.aliyuncs.com/robin-public/goharbor_harbor-core:v2.13.2
@@ -64,8 +68,6 @@ docker.io/nacos/nacos-server:v2.4.0.1
 docker.riji.life/robin-public/alpine:latest
 docker.riji.life/robin-public/appleboy/drone-scp:latest
 docker.riji.life/robin-public/appleboy/drone-ssh:latest
-docker.riji.life/library/argoproj/argocd:latest
-docker.riji.life/robin-public/argoproj/argocd:latest
 docker.riji.life/robin-public/cr.fluentbit.io/fluent/fluent-bit:4.0.3
 docker.riji.life/robin-public/crazymax/cloudflared:latest
 docker.riji.life/library/maven:3.8-openjdk-8
@@ -180,10 +182,9 @@ registry.k8s.io/kube-state-metrics/kube-state-metrics:v2.13.0
 docker.riji.life/robin-public/registry.k8s.io/coredns/coredns:v1.12.0
 docker.riji.life/robin-public/quay.io/prometheus/node-exporter:v1.9.1
 docker.riji.life/robin-public/quay.io/argoproj/argocd:v3.0.6
-docker.riji.life/robin-public/ghcr.io/immich-app/immich-machine-learning:release
-docker.riji.life/robin-public/ghcr.io/immich-app/immich-server:release
+docker.riji.life/robin-public/quay.io/argoproj/argocd:v3.0.12
 
-
+docker.m.daocloud.io/bitnami/kafka:4.0.0-debian-12-r0
 
 quay.m.daocloud.io/calico/cni:v3.29.4
 quay.m.daocloud.io/calico/cni:v3.29.5
