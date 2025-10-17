@@ -192,9 +192,7 @@ trigger:
   branch:
     - main
   event:
-    - push
-    - custom
-
+    - manual
 volumes:
   - name: shared
     host:
