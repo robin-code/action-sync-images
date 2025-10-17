@@ -1,7 +1,6 @@
 kind: pipeline
 type: kubernetes
 name: clean node7
-
 steps:
   - name: upload delete-images.yaml to node7
     image: docker.riji.life/robin-public/appleboy/drone-scp
@@ -76,9 +75,6 @@ steps:
 kind: pipeline
 type: kubernetes
 name: clean node9
-trigger:
-  branch:
-    - test
 steps:
   - name: upload delete-images.yaml to node9
     image: docker.riji.life/robin-public/appleboy/drone-scp
