@@ -1,8 +1,8 @@
-openems/edge:latest
-openems/ui-edge:latest
-openems/backend:latest
-openems/ui-backend:latest
-influxdb:alpine
+#openems/edge:latest
+#openems/ui-edge:latest
+#openems/backend:latest
+#openems/ui-backend:latest
+#influxdb:alpine
 #langgenius/dify-api:1.6.0
 #langgenius/dify-web:1.6.0
 #langgenius/dify-sandbox:0.2.12
