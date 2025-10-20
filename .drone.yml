@@ -190,8 +190,8 @@ name: sync-images-to-harbor
 trigger:
   branch:
     - main
-  event:
-    - manual
+#  event:
+#    - manual
 volumes:
   - name: shared
     host:
@@ -256,6 +256,6 @@ steps:
           exit 0
         fi
       - git add image.yaml
-      - 'git commit --author="$DRONE_BOT_BOT_NAME <$DRONE_BOT_BOT_EMAIL>" -m "ci: 标记已同步的镜像为注释状态" || echo "No changes to commit"'
+      - 'git commit --author="$DRONE_BOT_BOT_NAME <$DRONE_BOT_BOT_EMAIL>" -m "ci: 标记已同步的镜像为注释状态 [CI SKIP]" || echo "No changes to commit"'
       - git remote set-url origin https://$GIT_USERNAME:$GIT_TOKEN@git.riji.life/DevOps/action-sync-images.git
       - git push origin HEAD:${DRONE_BRANCH}
