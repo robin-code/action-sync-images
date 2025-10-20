@@ -182,7 +182,6 @@ steps:
             echo '--> Cleaning up temporary file...'
             rm /home/robin/delete-images.yaml
           " 
-
 ---
 kind: pipeline
 type: kubernetes
