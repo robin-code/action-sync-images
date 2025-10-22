@@ -181,7 +181,8 @@
 # openjdk:21-jdk-oracle
 # openjdk:21-jdk
 # openjdk:8-jdk
-# linuxserver/nextcloud:31.0.6
+#linuxserver/nextcloud:31.0.6
+linuxserver/nextcloud:32.0.0
 # linuxserver/calibre-web:0.6.24
 
 # docker.io/mirantis/k8s-netchecker-server:v1.2.2
