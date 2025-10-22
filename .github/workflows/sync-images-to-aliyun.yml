@@ -1,7 +1,7 @@
 # 工作流名称
 name: Sync-Images-to-AliyunCr-Example
 # 工作流运行时显示名称
-run-name: ${{ github.actor }} is Sync Images to Aliyun.
+run-name: ${{ github.actor }} is Sync Images to Aliyun and private Harbor
 # 怎样触发工作流
 on:
   push:
@@ -65,7 +65,7 @@ jobs:
       - name: Wait for tunnel to stabilize
         run: sleep 10
 
-      - name: Call Drone API via Cloudflare Tunnel
+      - name: Sync to Harbor by Call Drone API via Cloudflare Tunnel
         run: |
           curl --location --request POST 'http://github.riji.life/api/repos/DevOps/action-sync-images/builds?branch=main' \
             --header 'Authorization: Bearer ${{ secrets.DRONE_API_TOKEN }}' \
