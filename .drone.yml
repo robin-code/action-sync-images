@@ -1,6 +1,11 @@
 kind: pipeline
 type: kubernetes
 name: clean node7
+trigger:
+  branch:
+    - main
+  event:
+    - custom
 steps:
   - name: upload delete-images.yaml to node7
     image: docker.riji.life/robin-public/appleboy/drone-scp
@@ -38,6 +43,11 @@ steps:
 kind: pipeline
 type: kubernetes
 name: clean node8
+trigger:
+  branch:
+    - main
+  event:
+    - custom
 steps:
   - name: upload delete-images.yaml to node8
     image: docker.riji.life/robin-public/appleboy/drone-scp
@@ -75,6 +85,11 @@ steps:
 kind: pipeline
 type: kubernetes
 name: clean node9
+trigger:
+  branch:
+    - main
+  event:
+    - custom
 steps:
   - name: upload delete-images.yaml to node9
     image: docker.riji.life/robin-public/appleboy/drone-scp
@@ -112,6 +127,11 @@ steps:
 kind: pipeline
 type: kubernetes
 name: clean node4
+trigger:
+  branch:
+    - main
+  event:
+    - custom
 steps:
   - name: upload delete-images.yaml to node4
     image: docker.riji.life/robin-public/appleboy/drone-scp
@@ -149,6 +169,11 @@ steps:
 kind: pipeline
 type: kubernetes
 name: clean node5
+trigger:
+  branch:
+    - main
+  event:
+    - custom
 steps:
   - name: upload delete-images.yaml to node5
     image: docker.riji.life/robin-public/appleboy/drone-scp
@@ -190,8 +215,8 @@ name: sync-images-to-harbor
 trigger:
   branch:
     - main
-#  event:
-#    - manual
+  event:
+    - custom
 volumes:
   - name: shared
     host:

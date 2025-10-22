@@ -14,7 +14,7 @@ on:
 
 # 工作流程任务（通常含有一个或多个步骤）
 jobs:
-  syncimages:
+  sync_images:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repos
@@ -45,28 +45,32 @@ jobs:
           IMAGE_REGISTRY_NAME_SPACE: ${{ vars.DOCKER_REGISTRY }}/${{ vars.REGISTRY_NAME_SPACE }}
         run: bash scripts/sync_to_aliyun.sh
 
-  trigger:
+  cloudflare-tunnel:
     runs-on: ubuntu-latest
+    needs: sync_images   # 依赖 build job 完成
     steps:
-      - name: Install cloudflared
-        run: |
-          wget -q https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
-          sudo dpkg -i cloudflared-linux-amd64.deb
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-      - name: Trigger Drone build via Cloudflare Tunnel
-        env:
-          DRONE_URL: https://drone.riji.life/api/repos/DevOps/action-sync-images/builds?branch=main
-          DRONE_TOKEN: ${{ secrets.DRONE_TOKEN }}
-          CF_ACCESS_CLIENT_ID: ${{ secrets.CF_ACCESS_CLIENT_ID }}
-          CF_ACCESS_CLIENT_SECRET: ${{ secrets.CF_ACCESS_CLIENT_SECRET }}
+      - name: Setup cloudflared
+        uses: AnimMouse/setup-cloudflared@v2
+
+      - name: Setup cloudflared tunnel
+        uses: AnimMouse/setup-cloudflared/tunnel@v2
+        with:
+          cloudflare_tunnel_credential: ${{ secrets.CLOUDFLARE_TUNNEL_CREDENTIAL }}
+          cloudflare_tunnel_configuration: ${{ vars.CLOUDFLARE_TUNNEL_CONFIGURATION }}
+          cloudflare_tunnel_id: ${{ vars.CLOUDFLARE_TUNNEL_ID }}
+
+      - name: Wait for tunnel to stabilize
+        run: sleep 10
+
+      - name: Call Drone API via Cloudflare Tunnel
         run: |
-          curl --location --request POST "$DRONE_URL" \
-            --header "Authorization: Bearer ${DRONE_TOKEN}" \
-            --header "CF-Access-Client-Id: ${CF_ACCESS_CLIENT_ID}" \
-            --header "CF-Access-Client-Secret: ${CF_ACCESS_CLIENT_SECRET}" \
+          curl --location --request POST 'http://github.riji.life/api/repos/DevOps/action-sync-images/builds?branch=main' \
+            --header 'Authorization: Bearer ${{ secrets.DRONE_API_TOKEN }}' \
+            --header 'User-Agent: GitHubAction/1.0' \
             --header 'Accept: */*' \
-            --header 'Connection: keep-alive'
-#      - name: Trigger Drone build
-#        run: |
-#          curl -X POST "${{ secrets.DRONE_SERVER }}/api/repos/DevOps/{repo}/builds?branch=main" \
-#          -H "Authorization: Bearer ${{ secrets.DRONE_TOKEN }}"
+            --header 'Host: github.riji.life' \
+            --header 'Connection: keep-alive' \
+            -v
