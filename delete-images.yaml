@@ -98,16 +98,24 @@ docker.riji.life/robin-public/registry.k8s.io/metrics-server/metrics-server:v0.7
 docker.io/library/busybox:1.28
 docker.io/library/busybox:1.31.1
 docker.io/library/busybox:1.37.0
+docker.io/nicolaka/netshoot:latest
+ghcr.io/nicolaka/netshoot:latest
+docker.io/portainer/portainer-ce:lts
+
 
 docker.io/bitnami/keycloak:26.2.5-debian-12-r3
 docker.io/bitnami/keycloak:26.2.5-debian-12-r1
-
+ghcr.io/kube-vip/kube-vip:v0.9.1
 #docker.io/goharbor/harbor-core:v2.13.1
 #docker.io/goharbor/harbor-jobservice:v2.13.1
 #docker.io/goharbor/harbor-registryctl:v2.13.1
 #docker.io/goharbor/registry-photon:v2.13.1
-
-
+quay.m.daocloud.io/cilium/certgen:v0.2.1
+quay.m.daocloud.io/cilium/cilium:v1.17.7
+quay.m.daocloud.io/cilium/hubble-ui-backend:v0.13.2
+quay.m.daocloud.io/cilium/hubble-ui:v0.13.2
+quay.m.daocloud.io/cilium/operator:v1.17.7
+quay.m.daocloud.io/cilium/cilium-envoy:v1.32.5-1744305768-f9ddca7dcd91f7ca25a505560e655c47d3dec2cf
 
 docker.riji.life/robin-public/pihole/pihole:2025.04.0
 docker.io/bitnami/redis:7.2.5-debian-12-r4
