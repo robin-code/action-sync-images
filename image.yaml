@@ -159,7 +159,7 @@
 # quay.io/prometheus-operator/prometheus-config-reloader:v0.83.0
 # quay.io/jetstack/cert-manager-webhook:v1.17.2
 # quay.io/jetstack/cert-manager-cainjector:v1.17.2
-quay.io/kubespray/kubespray:v2.29.0
+# quay.io/kubespray/kubespray:v2.29.0
 # docker.io/traefik:v3.4.0
 #cr.fluentbit.io/fluent/fluent-bit:4.0.3
 # cr.fluentbit.io/fluent/fluent-bit:4.0.7
