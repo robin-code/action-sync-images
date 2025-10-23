@@ -4,11 +4,11 @@
 # export HARBOR_USER="your_user"
 # export HARBOR_PASS="your_password"
 
-HARBOR_USER=${HARBOR_USER:-"admin"}
-HARBOR_PASS=${HARBOR_PASS:-"Harbor12345"}
+HARBOR_USER=${HARBOR_USER}
+HARBOR_PASS=${HARBOR_PASS}
 HARBOR_URL=${HARBOR_URL:-"https://docker.riji.life"}
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-FILE="$SCRIPT_DIR/../delete-images.yaml"
+FILE="$SCRIPT_DIR/../remove-private-image.txt"
 
 if [ ! -f "$FILE" ]; then
   echo "File does not exist: $FILE"

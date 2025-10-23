@@ -29,11 +29,11 @@ steps:
         - |
           sudo sh -c "
             echo '--> Deleting images based on list...'
-            crictl rmi \$(cat /home/robin/delete-images.yaml) || true
+            crictl rmi $(cat /home/robin/delete-images.yaml) || true
 
             echo '--> Deleting untagged images...'
-            for img in \$(crictl images | grep '<none>' | awk '{print \$3}'); do
-              crictl rmi \$img || true
+            for img in $(crictl images | grep '<none>' | awk '{print $3}'); do
+              crictl rmi $img || true
             done
 
             echo '--> Cleaning up temporary file...'
@@ -71,11 +71,11 @@ steps:
         - |
           sudo sh -c "
             echo '--> Deleting images based on list...'
-            crictl rmi \$(cat /home/robin/delete-images.yaml) || true
+            crictl rmi $(cat /home/robin/delete-images.yaml) || true
 
             echo '--> Deleting untagged images...'
-            for img in \$(crictl images | grep '<none>' | awk '{print \$3}'); do
-              crictl rmi \$img || true
+            for img in $(crictl images | grep '<none>' | awk '{print $3}'); do
+              crictl rmi $img || true
             done
 
             echo '--> Cleaning up temporary file...'
@@ -113,11 +113,11 @@ steps:
         - |
           sudo sh -c "
             echo '--> Deleting images based on list...'
-            crictl rmi \$(cat /home/robin/delete-images.yaml) || true
+            crictl rmi $(cat /home/robin/delete-images.yaml) || true
 
             echo '--> Deleting untagged images...'
-            for img in \$(crictl images | grep '<none>' | awk '{print \$3}'); do
-              crictl rmi \$img || true
+            for img in $(crictl images | grep '<none>' | awk '{print $3}'); do
+              crictl rmi $img || true
             done
 
             echo '--> Cleaning up temporary file...'
@@ -155,11 +155,11 @@ steps:
         - |
           sudo sh -c "
             echo '--> Deleting images based on list...'
-            crictl rmi \$(cat /home/robin/delete-images.yaml) || true
+            crictl rmi $(cat /home/robin/delete-images.yaml) || true
 
             echo '--> Deleting untagged images...'
-            for img in \$(crictl images | grep '<none>' | awk '{print \$3}'); do
-              crictl rmi \$img || true
+            for img in $(crictl images | grep '<none>' | awk '{print $3}'); do
+              crictl rmi $img || true
             done
 
             echo '--> Cleaning up temporary file...'
@@ -197,16 +197,38 @@ steps:
         - |
           sudo sh -c "
             echo '--> Deleting images based on list...'
-            crictl rmi \$(cat /home/robin/delete-images.yaml) || true
+            crictl rmi $(cat /home/robin/delete-images.yaml) || true
 
             echo '--> Deleting untagged images...'
-            for img in \$(crictl images | grep '<none>' | awk '{print \$3}'); do
-              crictl rmi \$img || true
+            for img in $(crictl images | grep '<none>' | awk '{print $3}'); do
+              crictl rmi $img || true
             done
 
             echo '--> Cleaning up temporary file...'
             rm /home/robin/delete-images.yaml
           " 
+---
+kind: pipeline
+type: kubernetes
+name: delete-harbor-images
+
+trigger:
+  branch:
+    - main
+#  event:
+#    - custom
+
+steps:
+  - name: delete-images
+    image: docker.riji.life/library/alpine-curl-jq
+    environment:
+      HARBOR_USER:
+        from_secret: HARBOR_USERNAME
+      HARBOR_PASS:
+        from_secret: HARBOR_PASSWORD
+    commands:
+      - chmod +x ./scripts/delete_harbor_images.sh
+      - ./scripts/delete_harbor_images.sh
 ---
 kind: pipeline
 type: kubernetes
@@ -256,7 +278,7 @@ steps:
           exit 0
         fi
       - cp image.yaml image.yaml.bak
-      - awk '/^[[:space:]]*#/ || /^[[:space:]]*$/ {print $0; next} {print "# "$0}' image.yaml.bak > image.yaml
+      - awk '''/^[[:space:]]*#/ || /^[[:space:]]*$/ {print $0; next} {print "# "$0}''' image.yaml.bak > image.yaml
 
   - name: commit and push
     image: docker.riji.life/robin-public/alpine/git
