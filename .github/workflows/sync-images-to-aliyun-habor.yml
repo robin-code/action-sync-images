@@ -14,7 +14,7 @@ on:
 
 # 工作流程任务（通常含有一个或多个步骤）
 jobs:
-  sync_images:
+  sync_images_to_aliyun:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repos
@@ -45,9 +45,9 @@ jobs:
           IMAGE_REGISTRY_NAME_SPACE: ${{ vars.DOCKER_REGISTRY }}/${{ vars.REGISTRY_NAME_SPACE }}
         run: bash scripts/sync_to_aliyun.sh
 
-  cloudflare-tunnel:
+  syn_to_harbor_by_cloudflare-tunnel:
     runs-on: ubuntu-latest
-    needs: sync_images   # 依赖 build job 完成
+    needs: sync_images_to_aliyun   # 依赖 build job 完成
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2

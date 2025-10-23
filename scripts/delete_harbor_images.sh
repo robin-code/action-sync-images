@@ -8,7 +8,7 @@ HARBOR_USER=${HARBOR_USER}
 HARBOR_PASS=${HARBOR_PASS}
 HARBOR_URL=${HARBOR_URL:-"https://docker.riji.life"}
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-FILE="$SCRIPT_DIR/../remove-private-image.txt"
+FILE="$SCRIPT_DIR/../delete-images.yaml"
 
 if [ ! -f "$FILE" ]; then
   echo "File does not exist: $FILE"
@@ -28,9 +28,18 @@ while IFS= read -r full_image || [[ -n "$full_image" ]]; do
     continue
   fi
 
-  image_without_registry=${full_image#*/}
+  # Check if the image starts with the skip prefix
+  if [[ "$full_image" == "docker.riji.life/robin-public/"* || "$full_image" == "registry.cn-hangzhou.aliyuncs.com/robin-public/"* ]]; then
+    echo "Skipping image: $full_image (starts with docker.riji.life/robin-public/ or registry.cn-hangzhou.aliyuncs.com/robin-public/)"
+    continue # Skip to the next image
+  fi
+
+  # If it doesn't start with the skip prefix, add the deletion prefix
+  local_image_to_delete="docker.riji.life/robin-public/$full_image"
+
+  image_without_registry=${local_image_to_delete#*/}
   repo=${image_without_registry%:*}
-  tag=${image_without_registry##*:}
+  tag=${local_image_to_delete##*:}
   project=${repo%%/*}
   name=${repo#*/}
 

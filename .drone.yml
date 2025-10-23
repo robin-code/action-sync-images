@@ -215,8 +215,8 @@ name: delete-harbor-images
 trigger:
   branch:
     - main
-#  event:
-#    - custom
+  event:
+    - custom
 
 steps:
   - name: delete-images
