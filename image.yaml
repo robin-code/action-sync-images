@@ -181,7 +181,7 @@
 # openjdk:21-jdk-oracle
 # openjdk:21-jdk
 # openjdk:8-jdk
-docker.io/nextcloud:32.0.0-fpm
+# docker.io/nextcloud:32.0.0-fpm
 # docker.io/mirantis/k8s-netchecker-server:v1.2.2
 # docker.io/mirantis/k8s-netchecker-agent:v1.2.2
 # quay.io/coreos/etcd:v3.5.21
