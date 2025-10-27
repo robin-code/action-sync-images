@@ -34,6 +34,7 @@ k8s.m.daocloud.io/kube-proxy:v1.33.1
 k8s.m.daocloud.io/kube-proxy:v1.33.2
 k8s.m.daocloud.io/kube-proxy:v1.33.3
 k8s.m.daocloud.io/kube-proxy:v1.33.4
+k8s.m.daocloud.io/kube-proxy:v1.33.5
 
 
 k8s.m.daocloud.io/kube-apiserver:v1.33.0
@@ -41,18 +42,21 @@ k8s.m.daocloud.io/kube-apiserver:v1.33.2
 k8s.m.daocloud.io/kube-apiserver:v1.33.1
 k8s.m.daocloud.io/kube-apiserver:v1.33.3
 k8s.m.daocloud.io/kube-apiserver:v1.33.4
+k8s.m.daocloud.io/kube-apiserver:v1.33.5
 
 k8s.m.daocloud.io/kube-scheduler:v1.33.0
 k8s.m.daocloud.io/kube-scheduler:v1.33.1
 k8s.m.daocloud.io/kube-scheduler:v1.33.2
 k8s.m.daocloud.io/kube-scheduler:v1.33.3
 k8s.m.daocloud.io/kube-scheduler:v1.33.4
+k8s.m.daocloud.io/kube-scheduler:v1.33.5
 
 k8s.m.daocloud.io/kube-controller-manager:v1.33.0
 k8s.m.daocloud.io/kube-controller-manager:v1.33.1
 k8s.m.daocloud.io/kube-controller-manager:v1.33.2
 k8s.m.daocloud.io/kube-controller-manager:v1.33.3
 k8s.m.daocloud.io/kube-controller-manager:v1.33.4
+k8s.m.daocloud.io/kube-controller-manager:v1.33.5
 
 ghcr.io/kube-vip/kube-vip:v0.8.3
 ghcr.io/kube-vip/kube-vip:v0.8.9
