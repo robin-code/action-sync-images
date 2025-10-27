@@ -148,6 +148,11 @@ docker.riji.life/robin-public/registry.k8s.io/kube-scheduler:v1.33.2
 docker.riji.life/robin-public/registry.k8s.io/pause:3.10
 docker.riji.life/robin-public/registry.k8s.io/cpa/cluster-proportional-autoscaler:v1.8.8
 registry.k8s.io/kube-state-metrics/kube-state-metrics:v2.13.0
+registry.k8s.io/kube-state-metrics/kube-state-metrics:v2.16.0
+registry.k8s.io/ingress-nginx/kube-webhook-certgen:v20221220-controller-v1.5.1-58-g787ea74b6
+registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.6.0
+docker.io/rancher/local-path-provisioner:v0.0.30
+
 docker.riji.life/robin-public/registry.k8s.io/coredns/coredns:v1.12.0
 docker.riji.life/robin-public/quay.io/prometheus/node-exporter:v1.9.1
 
