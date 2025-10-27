@@ -31,12 +31,14 @@ steps:
         - |
           sudo sh -c "
             echo '--> Deleting images based on list...'
-            crictl rmi $(cat /home/robin/delete-images.yaml) || true
+            if [ -f /home/robin/delete-images.yaml ]; then
+                # Using xargs to delete images one by one to avoid argument list too long error
+                xargs -a /home/robin/delete-images.yaml -r -L 1 -- crictl rmi || true
+            fi
 
             echo '--> Deleting untagged images...'
-            for img in $(crictl images | grep '<none>' | awk '{print $3}'); do
-              crictl rmi $img || true
-            done
+            # The 'crictl images' command might fail if there are no images, so we add '|| true'
+            crictl images | grep '<none>' | awk '{print \$3}' | xargs -r -L 1 -- crictl rmi || true
 
             echo '--> Cleaning up temporary file...'
             rm /home/robin/delete-images.yaml
@@ -75,12 +77,14 @@ steps:
         - |
           sudo sh -c "
             echo '--> Deleting images based on list...'
-            crictl rmi $(cat /home/robin/delete-images.yaml) || true
+            if [ -f /home/robin/delete-images.yaml ]; then
+                # Using xargs to delete images one by one to avoid argument list too long error
+                xargs -a /home/robin/delete-images.yaml -r -L 1 -- crictl rmi || true
+            fi
 
             echo '--> Deleting untagged images...'
-            for img in $(crictl images | grep '<none>' | awk '{print $3}'); do
-              crictl rmi $img || true
-            done
+            # The 'crictl images' command might fail if there are no images, so we add '|| true'
+            crictl images | grep '<none>' | awk '{print \$3}' | xargs -r -L 1 -- crictl rmi || true
 
             echo '--> Cleaning up temporary file...'
             rm /home/robin/delete-images.yaml
@@ -119,12 +123,14 @@ steps:
         - |
           sudo sh -c "
             echo '--> Deleting images based on list...'
-            crictl rmi $(cat /home/robin/delete-images.yaml) || true
+            if [ -f /home/robin/delete-images.yaml ]; then
+                # Using xargs to delete images one by one to avoid argument list too long error
+                xargs -a /home/robin/delete-images.yaml -r -L 1 -- crictl rmi || true
+            fi
 
             echo '--> Deleting untagged images...'
-            for img in $(crictl images | grep '<none>' | awk '{print $3}'); do
-              crictl rmi $img || true
-            done
+            # The 'crictl images' command might fail if there are no images, so we add '|| true'
+            crictl images | grep '<none>' | awk '{print \$3}' | xargs -r -L 1 -- crictl rmi || true
 
             echo '--> Cleaning up temporary file...'
             rm /home/robin/delete-images.yaml
@@ -136,8 +142,9 @@ name: clean node4
 trigger:
   branch:
     - main
-  event:
-    - custom
+    - test-ci
+#  event:
+#    - custom
 steps:
   - name: upload delete-images.yaml to node4
     image: docker.riji.life/robin-public/appleboy/drone-scp
@@ -163,12 +170,14 @@ steps:
         - |
           sudo sh -c "
             echo '--> Deleting images based on list...'
-            crictl rmi $(cat /home/robin/delete-images.yaml) || true
+            if [ -f /home/robin/delete-images.yaml ]; then
+                # Using xargs to delete images one by one to avoid argument list too long error
+                xargs -a /home/robin/delete-images.yaml -r -L 1 -- crictl rmi || true
+            fi
 
             echo '--> Deleting untagged images...'
-            for img in $(crictl images | grep '<none>' | awk '{print $3}'); do
-              crictl rmi $img || true
-            done
+            # The 'crictl images' command might fail if there are no images, so we add '|| true'
+            crictl images | grep '<none>' | awk '{print \$3}' | xargs -r -L 1 -- crictl rmi || true
 
             echo '--> Cleaning up temporary file...'
             rm /home/robin/delete-images.yaml
@@ -180,6 +189,7 @@ name: clean node5
 trigger:
   branch:
     - main
+    - test-ci
   event:
     - custom
 steps:
@@ -207,12 +217,14 @@ steps:
         - |
           sudo sh -c "
             echo '--> Deleting images based on list...'
-            crictl rmi $(cat /home/robin/delete-images.yaml) || true
+            if [ -f /home/robin/delete-images.yaml ]; then
+                # Using xargs to delete images one by one to avoid argument list too long error
+                xargs -a /home/robin/delete-images.yaml -r -L 1 -- crictl rmi || true
+            fi
 
             echo '--> Deleting untagged images...'
-            for img in $(crictl images | grep '<none>' | awk '{print $3}'); do
-              crictl rmi $img || true
-            done
+            # The 'crictl images' command might fail if there are no images, so we add '|| true'
+            crictl images | grep '<none>' | awk '{print \$3}' | xargs -r -L 1 -- crictl rmi || true
 
             echo '--> Cleaning up temporary file...'
             rm /home/robin/delete-images.yaml
