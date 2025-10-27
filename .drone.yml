@@ -1,13 +1,13 @@
 kind: pipeline
 type: kubernetes
-name: clean node7
+name: clean node1
 trigger:
   branch:
     - main
   event:
     - custom
 steps:
-  - name: upload delete-images.yaml to node7
+  - name: upload delete-images.yaml to node1
     image: docker.riji.life/robin-public/appleboy/drone-scp
     pull: if-not-exists
     settings:
@@ -46,14 +46,14 @@ steps:
 ---
 kind: pipeline
 type: kubernetes
-name: clean node8
+name: clean node2
 trigger:
   branch:
     - main
   event:
     - custom
 steps:
-  - name: upload delete-images.yaml to node8
+  - name: upload delete-images.yaml to node2
     image: docker.riji.life/robin-public/appleboy/drone-scp
     pull: if-not-exists
     settings:
@@ -92,14 +92,14 @@ steps:
 ---
 kind: pipeline
 type: kubernetes
-name: clean node9
+name: clean node3
 trigger:
   branch:
     - main
   event:
     - custom
 steps:
-  - name: upload delete-images.yaml to node9
+  - name: upload delete-images.yaml to node3
     image: docker.riji.life/robin-public/appleboy/drone-scp
     pull: if-not-exists
     settings:
@@ -143,8 +143,8 @@ trigger:
   branch:
     - main
     - test-ci
-#  event:
-#    - custom
+  event:
+    - custom
 steps:
   - name: upload delete-images.yaml to node4
     image: docker.riji.life/robin-public/appleboy/drone-scp
