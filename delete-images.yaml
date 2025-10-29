@@ -64,7 +64,10 @@ ghcr.io/kube-vip/kube-vip:v0.9.0
 
 cr.fluentbit.io/fluent/fluent-bit:4.0.3
 docker.riji.life/robin-public/cr.fluentbit.io/fluent/fluent-bit:4.0.7
+docker.riji.life/robin-public/louislam/uptime-kuma:1.23.16
 louislam/uptime-kuma:1.23.16
+robin-public/docker.gitea.com/gitea:1.24.5-rootless
+
 
 registry.cn-hangzhou.aliyuncs.com/robin-registry/react-guli-admin:latest
 registry.cn-hangzhou.aliyuncs.com/robin-registry/robin-spring-boot-gradle-demo:238_202505270934_8d815d2
