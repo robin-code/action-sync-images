@@ -80,6 +80,7 @@
 #goharbor/redis-photon:v2.14.0
 # emqx/emqx:5.8.5
 # louislam/uptime-kuma:1.23.16
+louislam/uptime-kuma:2.0.2
 # bitnami/openldap:2.6.10
 # emqx/emqx:5.8.5
 # mysql/mysql-server:5.7
