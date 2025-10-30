@@ -1,4 +1,5 @@
 # xhongc/music_tag_web:latest
+linuxserver/qbittorrent
 #openems/edge:latest
 #openems/ui-edge:latest
 #openems/backend:latest
