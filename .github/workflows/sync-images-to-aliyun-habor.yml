@@ -45,32 +45,32 @@ jobs:
           IMAGE_REGISTRY_NAME_SPACE: ${{ vars.DOCKER_REGISTRY }}/${{ vars.REGISTRY_NAME_SPACE }}
         run: bash scripts/sync_to_aliyun.sh
 
-#  syn_to_harbor_by_cloudflare-tunnel:
-#    runs-on: ubuntu-latest
-#    needs: sync_images_to_aliyun   # 依赖 build job 完成
-#    steps:
-#      - name: Checkout repository
-#        uses: actions/checkout@v2
-#
-#      - name: Setup cloudflared
-#        uses: AnimMouse/setup-cloudflared@v2
-#
-#      - name: Setup cloudflared tunnel
-#        uses: AnimMouse/setup-cloudflared/tunnel@v2
-#        with:
-#          cloudflare_tunnel_credential: ${{ secrets.CLOUDFLARE_TUNNEL_CREDENTIAL }}
-#          cloudflare_tunnel_configuration: ${{ vars.CLOUDFLARE_TUNNEL_CONFIGURATION }}
-#          cloudflare_tunnel_id: ${{ vars.CLOUDFLARE_TUNNEL_ID }}
-#
-#      - name: Wait for tunnel to stabilize
-#        run: sleep 10
-#
-#      - name: Sync to Harbor by Call Drone API via Cloudflare Tunnel
-#        run: |
-#          curl --location --request POST 'http://github.riji.life/api/repos/DevOps/action-sync-images/builds?branch=main' \
-#            --header 'Authorization: Bearer ${{ secrets.DRONE_API_TOKEN }}' \
-#            --header 'User-Agent: GitHubAction/1.0' \
-#            --header 'Accept: */*' \
-#            --header 'Host: github.riji.life' \
-#            --header 'Connection: keep-alive' \
-#            -v
+  syn_to_harbor_by_cloudflare-tunnel:
+    runs-on: ubuntu-latest
+    needs: sync_images_to_aliyun   # 依赖 build job 完成
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup cloudflared
+        uses: AnimMouse/setup-cloudflared@v2
+
+      - name: Setup cloudflared tunnel
+        uses: AnimMouse/setup-cloudflared/tunnel@v2
+        with:
+          cloudflare_tunnel_credential: ${{ secrets.CLOUDFLARE_TUNNEL_CREDENTIAL }}
+          cloudflare_tunnel_configuration: ${{ vars.CLOUDFLARE_TUNNEL_CONFIGURATION }}
+          cloudflare_tunnel_id: ${{ vars.CLOUDFLARE_TUNNEL_ID }}
+
+      - name: Wait for tunnel to stabilize
+        run: sleep 10
+
+      - name: Sync to Harbor by Call Drone API via Cloudflare Tunnel
+        run: |
+          curl --location --request POST 'http://github.riji.life/api/repos/DevOps/action-sync-images/builds?branch=main' \
+            --header 'Authorization: Bearer ${{ secrets.DRONE_API_TOKEN }}' \
+            --header 'User-Agent: GitHubAction/1.0' \
+            --header 'Accept: */*' \
+            --header 'Host: github.riji.life' \
+            --header 'Connection: keep-alive' \
+            -v
