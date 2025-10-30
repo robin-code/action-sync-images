@@ -6,7 +6,7 @@
 #ghcr.io/canner/wren-ai-service:0.27.14
 #qdrant/qdrant:v1.11.0
 #ghcr.io/canner/wren-ui:0.31.2
-deluan/navidrome:latest
+# deluan/navidrome:latest
 #openems/edge:latest
 #openems/ui-edge:latest
 #openems/backend:latest
