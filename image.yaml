@@ -1,12 +1,19 @@
-# xhongc/music_tag_web:latest
-# linuxserver/qbittorrent:latest
+mcp/obsidian:latest
+mcp/redis:latest
+mcp/postman:latest
+mcp/kubernetes:latest
+mcp/grafana:latest
+mcp/postgres:latest
+mcp/github:latest
+#xhongc/music_tag_web:latest
+#linuxserver/qbittorrent:latest
 #ghcr.io/canner/wren-bootstrap:0.1.5
 #ghcr.io/canner/wren-engine:0.20.2
 #ghcr.io/canner/wren-engine-ibis:0.20.2
 #ghcr.io/canner/wren-ai-service:0.27.14
 #qdrant/qdrant:v1.11.0
 #ghcr.io/canner/wren-ui:0.31.2
-# deluan/navidrome:latest
+#deluan/navidrome:latest
 #openems/edge:latest
 #openems/ui-edge:latest
 #openems/backend:latest
@@ -18,15 +25,15 @@
 #langgenius/dify-plugin-daemon:0.1.3-local
 
 #docker.io/bitnami/kafka:4.0.0-debian-12-r0
-# provectuslabs/kafka-ui:latest
+#provectuslabs/kafka-ui:latest
 #containous/whoami:latest
 #quay.io/oauth2-proxy/oauth2-proxy:v7.7.1
 #docker.io/bitnami/os-shell:12-debian-12-r40
 #ghcr.io/sysadminsmedia/homebox:latest
-# ghcr.io/immich-app/immich-machine-learning:v2.2.1
-# ghcr.io/immich-app/immich-server:v2.2.1
+#ghcr.io/immich-app/immich-machine-learning:v2.2.1
+#ghcr.io/immich-app/immich-server:v2.2.1
 #ghcr.io/tensorchord/cloudnative-pgvecto.rs:16.5-v0.3.0
-# nacos/nacos-server:v1.4.7
+#nacos/nacos-server:v1.4.7
 #
 #victoriametrics/victoria-metrics:v1.95.1
 #postgres:15
@@ -40,14 +47,14 @@
 #quay.io/cilium/operator-generic:v1.18.1
 #quay.io/cilium/cilium-envoy:v1.34.4-1754895458-68cffdfa568b6b226d70a7ef81fc65dda3b890bf
 #quay.io/cilium/startup-script:c54c7edeab7fde4da68e59acd319ab24af242c3f@sha256
-# shinedc09/anki-sync-server:25.09
+#shinedc09/anki-sync-server:25.09
 #ghcr.io/spiffe/spire-server:1.12.4
 #ghcr.io/spiffe/spire-agent:1.12.4
 #docker.io/library/busybox:1.37.0
-# xuxueli/xxl-job-admin:3.1.1
+#xuxueli/xxl-job-admin:3.1.1
 #docker.io/node:20
 #docker.io/node:21
-# docker.io/node:22
+#docker.io/node:22
 #node:20
 #node:21
 #node:22
@@ -62,22 +69,22 @@
 #ghcr.io/tektoncd/triggers/webhook-dd1edc925ee1772a9f76e2c1bc291ef6:v0.32.0
 #ghcr.io/tektoncd/triggers/controller-f656ca31de179ab913fa76abc255c315:v0.32.0
 #ghcr.io/tektoncd/pipeline/events-a9042f7efb0cbade2a868a1ee5ddd52c:v1.2.0
-# lscr.io/linuxserver/calibre-web:latest
-# langgenius/dify-sandbox:0.2.12
-# langgenius/dify-api:1.5.0
-# langgenius/dify-plugin-daemon:0.1.2-local
-# langgenius/dify-api:1.5.0
-# langgenius/dify-web:1.5.0
-# docker.io/bitnami/redis:7.0.11-debian-11-r12
-# docker.io/bitnami/postgresql:15.3.0-debian-11-r7
-# docker.io/semitechnologies/weaviate:1.19.1
-# docker.io/bitnami/kubectl:1.32.3-debian-12-r1
+#lscr.io/linuxserver/calibre-web:latest
+#langgenius/dify-sandbox:0.2.12
+#langgenius/dify-api:1.5.0
+#langgenius/dify-plugin-daemon:0.1.2-local
+#langgenius/dify-api:1.5.0
+#langgenius/dify-web:1.5.0
+#docker.io/bitnami/redis:7.0.11-debian-11-r12
+#docker.io/bitnami/postgresql:15.3.0-debian-11-r7
+#docker.io/semitechnologies/weaviate:1.19.1
+#docker.io/bitnami/kubectl:1.32.3-debian-12-r1
 
-# anapsix/alpine-java:8_server-jre_unlimited
-# azul/zulu-openjdk-alpine:8
-# azul/zulu-openjdk-alpine:11
-# docker.io/redis:6.2-alpine
-# docker.io/bitnami/redis:8.0.2-debian-12-r3
+#anapsix/alpine-java:8_server-jre_unlimited
+#azul/zulu-openjdk-alpine:8
+#azul/zulu-openjdk-alpine:11
+#docker.io/redis:6.2-alpine
+#docker.io/bitnami/redis:8.0.2-debian-12-r3
 #goharbor/harbor-core:v2.14.0
 #goharbor/harbor-jobservice:v2.14.0
 #goharbor/harbor-portal:v2.14.0
@@ -87,34 +94,34 @@
 #goharbor/trivy-adapter-photon:v2.14.0
 #goharbor/harbor-registryctl:v2.14.0
 #goharbor/redis-photon:v2.14.0
-# emqx/emqx:5.8.5
-# louislam/uptime-kuma:1.23.16
-# louislam/uptime-kuma:2.0.2
-# bitnami/openldap:2.6.10
-# emqx/emqx:5.8.5
-# mysql/mysql-server:5.7
-# crazymax/cloudflared:latest
+#emqx/emqx:5.8.5
+#louislam/uptime-kuma:1.23.16
+#louislam/uptime-kuma:2.0.2
+#bitnami/openldap:2.6.10
+#emqx/emqx:5.8.5
+#mysql/mysql-server:5.7
+#crazymax/cloudflared:latest
 
-# docker.io/library/nginx:1.28.0-alpine
-# nginx:1.27
-# nginx:1.28
-# nginx:latest
-# docker.io/bitnami/elasticsearch:8.17.4-debian-12-r0
-# docker.io/bitnami/kibana:8.17.4-debian-12-r0
-# portainer/portainer-ce:lts
-# docker.io/bitnami/rabbitmq:4.0.7-debian-12-r0
-# busybox:latest
-# alpine:latest
-# docker.io/bitnami/valkey-cluster:8.1.2-debian-12-r0
-# docker.gitea.com/gitea:1.24.0-rootless
-# docker.gitea.com/gitea:1.24.6-rootless
-# docker.gitea.com/gitea:1.24.0
-# docker.io/bitnami/redis:8.0.2-debian-12-r3
-# docker.io/bitnami/redis-sentinel:8.0.2-debian-12-r2
-# docker.io/bitnami/redis-exporter:1.74.0-debian-12-r1
-# docker.io/bitnami/os-shell:12-debian-12-r47
-# docker.io/bitnami/kubectl:1.33.2-debian-12-r0
-# docker.io/bitnami/os-shell:12-debian-12-r47
+#docker.io/library/nginx:1.28.0-alpine
+#nginx:1.27
+#nginx:1.28
+#nginx:latest
+#docker.io/bitnami/elasticsearch:8.17.4-debian-12-r0
+#docker.io/bitnami/kibana:8.17.4-debian-12-r0
+#portainer/portainer-ce:lts
+#docker.io/bitnami/rabbitmq:4.0.7-debian-12-r0
+#busybox:latest
+#alpine:latest
+#docker.io/bitnami/valkey-cluster:8.1.2-debian-12-r0
+#docker.gitea.com/gitea:1.24.0-rootless
+#docker.gitea.com/gitea:1.24.6-rootless
+#docker.gitea.com/gitea:1.24.0
+#docker.io/bitnami/redis:8.0.2-debian-12-r3
+#docker.io/bitnami/redis-sentinel:8.0.2-debian-12-r2
+#docker.io/bitnami/redis-exporter:1.74.0-debian-12-r1
+#docker.io/bitnami/os-shell:12-debian-12-r47
+#docker.io/bitnami/kubectl:1.33.2-debian-12-r0
+#docker.io/bitnami/os-shell:12-debian-12-r47
 #docker.io/drone/drone:2.12.1
 #drone/drone-runner-kube:1.0.0-rc.3
 #docker.io/drone/kubernetes-secrets:latest
@@ -127,119 +134,119 @@
 #appleboy/drone-ssh:latest
 #maven:3.8-openjdk-8
 #alpine/git:latest
-# quay.io/skopeo/stable:latest
-# argoproj/argocd:latest
-# gradle:8.5-jdk21
+#quay.io/skopeo/stable:latest
+#argoproj/argocd:latest
+#gradle:8.5-jdk21
 
-# quay.io/metallb/controller:v0.15.1
-# quay.io/metallb/speaker:v0.15.1
-# quay.io/frrouting/frr:9.1.0
+#quay.io/metallb/controller:v0.15.1
+#quay.io/metallb/speaker:v0.15.1
+#quay.io/frrouting/frr:9.1.0
 
-# ghcr.io/kube-vip/kube-vip:v0.8.9
-# quay.io/calico/node:v3.29.3
-# registry.k8s.io/dns/k8s-dns-node-cache:1.25.0
-# registry.k8s.io/coredns/coredns:v1.12.0
-# registry.k8s.io/metrics-server/metrics-server:v0.7.0
-# registry.k8s.io/kube-proxy:v1.33.1
-# registry.k8s.io/kube-controller-manager:v1.33.1
-# registry.k8s.io/kube-scheduler:v1.33.1
-# registry.k8s.io/kube-apiserver:v1.33.1
+#ghcr.io/kube-vip/kube-vip:v0.8.9
+#quay.io/calico/node:v3.29.3
+#registry.k8s.io/dns/k8s-dns-node-cache:1.25.0
+#registry.k8s.io/coredns/coredns:v1.12.0
+#registry.k8s.io/metrics-server/metrics-server:v0.7.0
+#registry.k8s.io/kube-proxy:v1.33.1
+#registry.k8s.io/kube-controller-manager:v1.33.1
+#registry.k8s.io/kube-scheduler:v1.33.1
+#registry.k8s.io/kube-apiserver:v1.33.1
 
-# quay.io/argoproj/argocd:v3.0.6
-# ghcr.io/dexidp/dex:v2.41.1
-# ghcr.io/dexidp/dex:v2.43.1
-# redis:7.0.15-alpine
-# redis:7.2.7-alpine
-# quay.io/prometheus/alertmanager:v0.27.0
-# quay.io/prometheus-operator/prometheus-config-reloader:v0.76.1
-# quay.io/kiwigrid/k8s-sidecar:1.27.4
-# docker.io/grafana/grafana:11.2.0
-# quay.io/prometheus-operator/prometheus-operator:v0.76.1
-# quay.io/prometheus/node-exporter:v1.8.2
-# docker.io/grafana/grafana:12.0.2
-# quay.io/kiwigrid/k8s-sidecar:1.30.0
-# quay.io/prometheus-operator/prometheus-operator:v0.83.0
-# quay.io/prometheus/node-exporter:v1.9.1
-# registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.5.4
-# registry.k8s.io/kube-state-metrics/kube-state-metrics:v2.15.0
-# docker.io/bats/bats:v1.4.1
-# quay.io/prometheus/alertmanager:v0.28.1
-# quay.io/prometheus/prometheus:v3.4.1
-# quay.io/prometheus-operator/prometheus-config-reloader:v0.83.0
-# quay.io/jetstack/cert-manager-webhook:v1.17.2
-# quay.io/jetstack/cert-manager-cainjector:v1.17.2
-# quay.io/kubespray/kubespray:v2.29.0
-# docker.io/traefik:v3.4.0
+#quay.io/argoproj/argocd:v3.0.6
+#ghcr.io/dexidp/dex:v2.41.1
+#ghcr.io/dexidp/dex:v2.43.1
+#redis:7.0.15-alpine
+#redis:7.2.7-alpine
+#quay.io/prometheus/alertmanager:v0.27.0
+#quay.io/prometheus-operator/prometheus-config-reloader:v0.76.1
+#quay.io/kiwigrid/k8s-sidecar:1.27.4
+#docker.io/grafana/grafana:11.2.0
+#quay.io/prometheus-operator/prometheus-operator:v0.76.1
+#quay.io/prometheus/node-exporter:v1.8.2
+#docker.io/grafana/grafana:12.0.2
+#quay.io/kiwigrid/k8s-sidecar:1.30.0
+#quay.io/prometheus-operator/prometheus-operator:v0.83.0
+#quay.io/prometheus/node-exporter:v1.9.1
+#registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.5.4
+#registry.k8s.io/kube-state-metrics/kube-state-metrics:v2.15.0
+#docker.io/bats/bats:v1.4.1
+#quay.io/prometheus/alertmanager:v0.28.1
+#quay.io/prometheus/prometheus:v3.4.1
+#quay.io/prometheus-operator/prometheus-config-reloader:v0.83.0
+#quay.io/jetstack/cert-manager-webhook:v1.17.2
+#quay.io/jetstack/cert-manager-cainjector:v1.17.2
+#quay.io/kubespray/kubespray:v2.29.0
+#docker.io/traefik:v3.4.0
 #cr.fluentbit.io/fluent/fluent-bit:4.0.3
-# cr.fluentbit.io/fluent/fluent-bit:4.0.7
+#cr.fluentbit.io/fluent/fluent-bit:4.0.7
 
-# docker.io/kubernetesui/dashboard-web:1.7.0
-# docker.io/kubernetesui/dashboard-api:1.13.0
-# docker.io/kubernetesui/dashboard-auth:1.3.0
+#docker.io/kubernetesui/dashboard-web:1.7.0
+#docker.io/kubernetesui/dashboard-api:1.13.0
+#docker.io/kubernetesui/dashboard-auth:1.3.0
 
-# rancher/local-path-provisioner:v0.0.30
+#rancher/local-path-provisioner:v0.0.30
 
-# ubuntu:24.04
-# rockylinux:9.3
-# busybox:1.37.0
-# alpine:3.22.0
-# curlimages/curl:8.14.1
-# mysql:9.0.0
-# mysql:8.4.5
-# mysql:8.0.42
-# openjdk:21-jdk-oracle
-# openjdk:21-jdk
-# openjdk:8-jdk
-# docker.io/nextcloud:32.0.0-fpm
-# docker.io/mirantis/k8s-netchecker-server:v1.2.2
-# docker.io/mirantis/k8s-netchecker-agent:v1.2.2
-# quay.io/coreos/etcd:v3.5.21
-# quay.io/cilium/cilium:v1.17.3
-# quay.io/cilium/operator:v1.17.3
-# quay.io/cilium/hubble-relay:v1.17.3
-# quay.io/cilium/certgen:v0.2.1
-# quay.io/cilium/hubble-ui:v0.13.2
-# quay.io/cilium/hubble-ui-backend:v0.13.2
-# quay.io/cilium/cilium-envoy:v1.32.5-1744305768-f9ddca7dcd91f7ca25a505560e655c47d3dec2cf
-# ghcr.io/k8snetworkplumbingwg/multus-cni:v4.1.0
-# docker.io/flannel/flannel:v0.26.7
-# docker.io/flannel/flannel-cni-plugin:v1.7.1-flannel1
-# quay.io/calico/node:v3.29.4
-# quay.io/calico/cni:v3.29.4
-# quay.io/calico/kube-controllers:v3.29.4
-# quay.io/calico/typha:v3.29.4
-# quay.io/calico/apiserver:v3.29.4
-# docker.io/kubeovn/kube-ovn:v1.12.21
-# docker.io/cloudnativelabs/kube-router:v2.1.1
-# registry.k8s.io/pause:3.10
-# ghcr.io/kube-vip/kube-vip:v0.8.9
-# docker.io/library/haproxy:3.1.7-alpine
-# registry.k8s.io/coredns/coredns:v1.12.0
-# registry.k8s.io/dns/k8s-dns-node-cache:1.25.0
-# registry.k8s.io/cpa/cluster-proportional-autoscaler:v1.8.8
-# docker.io/library/registry:2.8.1
-# registry.k8s.io/metrics-server/metrics-server:v0.7.0
-# registry.k8s.io/sig-storage/local-volume-provisioner:v2.5.0
-# docker.io/rancher/local-path-provisioner:v0.0.24
-# registry.k8s.io/ingress-nginx/controller:v1.12.1
-# quay.io/jetstack/cert-manager-controller:v1.15.3
-# quay.io/jetstack/cert-manager-cainjector:v1.15.3
-# quay.io/jetstack/cert-manager-webhook:v1.15.3
-# registry.k8s.io/sig-storage/csi-attacher:v3.3.0
-# registry.k8s.io/sig-storage/csi-provisioner:v3.0.0
-# registry.k8s.io/sig-storage/csi-snapshotter:v5.0.0
-# registry.k8s.io/sig-storage/snapshot-controller:v7.0.2
-# registry.k8s.io/sig-storage/csi-resizer:v1.3.0
-# registry.k8s.io/sig-storage/csi-node-driver-registrar:v2.4.0
-# registry.k8s.io/provider-os/cinder-csi-plugin:v1.30.0
-# docker.io/kubernetesui/dashboard:v2.7.0
-# docker.io/kubernetesui/metrics-scraper:v1.0.8
-# quay.io/metallb/speaker:v0.13.9
-# quay.io/metallb/controller:v0.13.9
-# registry.k8s.io/kube-apiserver:v1.33.2
-# registry.k8s.io/kube-controller-manager:v1.33.2
-# registry.k8s.io/kube-scheduler:v1.33.2
-# registry.k8s.io/kube-proxy:v1.33.2
+#ubuntu:24.04
+#rockylinux:9.3
+#busybox:1.37.0
+#alpine:3.22.0
+#curlimages/curl:8.14.1
+#mysql:9.0.0
+#mysql:8.4.5
+#mysql:8.0.42
+#openjdk:21-jdk-oracle
+#openjdk:21-jdk
+#openjdk:8-jdk
+#docker.io/nextcloud:32.0.0-fpm
+#docker.io/mirantis/k8s-netchecker-server:v1.2.2
+#docker.io/mirantis/k8s-netchecker-agent:v1.2.2
+#quay.io/coreos/etcd:v3.5.21
+#quay.io/cilium/cilium:v1.17.3
+#quay.io/cilium/operator:v1.17.3
+#quay.io/cilium/hubble-relay:v1.17.3
+#quay.io/cilium/certgen:v0.2.1
+#quay.io/cilium/hubble-ui:v0.13.2
+#quay.io/cilium/hubble-ui-backend:v0.13.2
+#quay.io/cilium/cilium-envoy:v1.32.5-1744305768-f9ddca7dcd91f7ca25a505560e655c47d3dec2cf
+#ghcr.io/k8snetworkplumbingwg/multus-cni:v4.1.0
+#docker.io/flannel/flannel:v0.26.7
+#docker.io/flannel/flannel-cni-plugin:v1.7.1-flannel1
+#quay.io/calico/node:v3.29.4
+#quay.io/calico/cni:v3.29.4
+#quay.io/calico/kube-controllers:v3.29.4
+#quay.io/calico/typha:v3.29.4
+#quay.io/calico/apiserver:v3.29.4
+#docker.io/kubeovn/kube-ovn:v1.12.21
+#docker.io/cloudnativelabs/kube-router:v2.1.1
+#registry.k8s.io/pause:3.10
+#ghcr.io/kube-vip/kube-vip:v0.8.9
+#docker.io/library/haproxy:3.1.7-alpine
+#registry.k8s.io/coredns/coredns:v1.12.0
+#registry.k8s.io/dns/k8s-dns-node-cache:1.25.0
+#registry.k8s.io/cpa/cluster-proportional-autoscaler:v1.8.8
+#docker.io/library/registry:2.8.1
+#registry.k8s.io/metrics-server/metrics-server:v0.7.0
+#registry.k8s.io/sig-storage/local-volume-provisioner:v2.5.0
+#docker.io/rancher/local-path-provisioner:v0.0.24
+#registry.k8s.io/ingress-nginx/controller:v1.12.1
+#quay.io/jetstack/cert-manager-controller:v1.15.3
+#quay.io/jetstack/cert-manager-cainjector:v1.15.3
+#quay.io/jetstack/cert-manager-webhook:v1.15.3
+#registry.k8s.io/sig-storage/csi-attacher:v3.3.0
+#registry.k8s.io/sig-storage/csi-provisioner:v3.0.0
+#registry.k8s.io/sig-storage/csi-snapshotter:v5.0.0
+#registry.k8s.io/sig-storage/snapshot-controller:v7.0.2
+#registry.k8s.io/sig-storage/csi-resizer:v1.3.0
+#registry.k8s.io/sig-storage/csi-node-driver-registrar:v2.4.0
+#registry.k8s.io/provider-os/cinder-csi-plugin:v1.30.0
+#docker.io/kubernetesui/dashboard:v2.7.0
+#docker.io/kubernetesui/metrics-scraper:v1.0.8
+#quay.io/metallb/speaker:v0.13.9
+#quay.io/metallb/controller:v0.13.9
+#registry.k8s.io/kube-apiserver:v1.33.2
+#registry.k8s.io/kube-controller-manager:v1.33.2
+#registry.k8s.io/kube-scheduler:v1.33.2
+#registry.k8s.io/kube-proxy:v1.33.2
 #tdengine/tsdb:latest
 #emqx/emqx-enterprise:5.10.0
 #emqx/emqx-operator-controller:2.2.29
