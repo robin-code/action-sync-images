@@ -302,7 +302,7 @@ steps:
           exit 0
         fi
       - cp image.yaml image.yaml.bak
-      - awk '''/^[[:space:]]*#/ || /^[[:space:]]*$/ {print $0; next} {print "# "$0}''' image.yaml.bak > image.yaml
+      - awk '''/^[[:space:]]*#/ || /^[[:space:]]*$/ {print $0; next} {print "#"$0}''' image.yaml.bak > image.yaml
 
   - name: commit and push
     image: docker.riji.life/robin-public/alpine/git
