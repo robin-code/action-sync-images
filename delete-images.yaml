@@ -19,8 +19,10 @@ docker.riji.life/robin-public/ghcr.io/immich-app/immich-machine-learning:v1.141.
 docker.riji.life/robin-public/ghcr.io/immich-app/immich-machine-learning:v1.142.0
 docker.riji.life/robin-public/ghcr.io/immich-app/immich-machine-learning:v1.143.0
 docker.riji.life/robin-public/ghcr.io/immich-app/immich-machine-learning:v2.0.1
-ghcr.io/immich-app/immich-machine-learning:v2.1.0
-
+ghcr.io/immich-app/immich-machine-learning:v2.1.0ghcr.io/immich-app/immich-machine-learning:v2.2.1
+ghcr.io/immich-app/immich-server:v2.2.1
+ghcr.io/immich-app/immich-machine-learning:v2.2.1
+ghcr.io/immich-app/immich-server:v2.2.1
 
 registry.cn-hangzhou.aliyuncs.com/robin-public/goharbor_harbor-core:v2.13.2
 registry.cn-hangzhou.aliyuncs.com/robin-public/goharbor_redis-photon:v2.13.2
