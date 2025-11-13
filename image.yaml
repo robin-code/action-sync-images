@@ -1,4 +1,6 @@
 #
+gotenberg/gotenberg:8
+#ghcr.io/linuxserver/libreoffice:7.5.9
 #mcp/redis:latest
 #mcp/postman:latest
 #mcp/kubernetes:latest
