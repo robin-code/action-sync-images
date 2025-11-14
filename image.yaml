@@ -107,7 +107,7 @@ docker.gitea.com/gitea:1.25.1-rootless
 #docker.io/library/nginx:1.28.0-alpine
 #nginx:1.27
 #nginx:1.28
-#nginx:latest
+nginx:latest
 #docker.io/bitnami/elasticsearch:8.17.4-debian-12-r0
 #docker.io/bitnami/kibana:8.17.4-debian-12-r0
 #portainer/portainer-ce:lts
