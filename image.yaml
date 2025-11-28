@@ -36,6 +36,9 @@
 #ghcr.io/immich-app/immich-server:v2.3.1
 #ghcr.io/tensorchord/cloudnative-pgvecto.rs:16.5-v0.3.0
 #nacos/nacos-server:v1.4.7
+nacos/nacos-server:v2.3.0
+nacos/nacos-server:v2.4.0.1
+nacos/nacos-server:v2.5.1
 #
 #victoriametrics/victoria-metrics:v1.95.1
 #postgres:15
