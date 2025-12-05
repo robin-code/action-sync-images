@@ -1,6 +1,8 @@
 quay.io/jetstack/cert-manager-controller:v1.18.2
 quay.io/jetstack/cert-manager-webhook:v1.18.2
 quay.io/jetstack/cert-manager-cainjector:v1.18.2
+docker.riji.life/robin-public/lscr.io/linuxserver/calibre-web:0.6.25
+docker.riji.life/robin-public/lscr.io/linuxserver/calibre-web:latest
 
 quay.io/metallb/controller:v0.15.2
 quay.io/metallb/speaker:v0.15.2
