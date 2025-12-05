@@ -1,3 +1,5 @@
+ghcr.m.daocloud.io/kube-vip/kube-vip:v1.0.0
+registry.cn-hangzhou.aliyuncs.com/robin-public/ghcr.io_kube-vip_kube-vip:v0.8.9
 docker.io/library/gradle:8.5-jdk21
 docker.riji.life/robin-public/ghcr.io/immich-app/immich-server:v1.138.0
 docker.riji.life/robin-public/ghcr.io/immich-app/immich-server:v1.138.1
