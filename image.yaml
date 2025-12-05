@@ -141,7 +141,7 @@
 #quay.io/skopeo/stable:latest
 #argoproj/argocd:latest
 #gradle:8.5-jdk21
-#linuxserver/calibre-web:latest
+linuxserver/calibre-web:latest
 
 #quay.io/metallb/controller:v0.15.1
 #quay.io/metallb/speaker:v0.15.1
