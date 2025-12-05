@@ -146,7 +146,7 @@
 #quay.io/metallb/speaker:v0.15.1
 #quay.io/frrouting/frr:9.1.0
 
-ghcr.io/kube-vip/kube-vip:v1.0.2
+#ghcr.io/kube-vip/kube-vip:v1.0.2
 #ghcr.io/kube-vip/kube-vip:v0.8.9
 #quay.io/calico/node:v3.29.3
 #registry.k8s.io/dns/k8s-dns-node-cache:1.25.0
