@@ -192,8 +192,8 @@
 
 #rancher/local-path-provisioner:v0.0.30
 
-ubuntu:24.04
-ubuntu:latest
+#ubuntu:24.04
+#ubuntu:latest
 #rockylinux:9.3
 #busybox:1.37.0
 #alpine:3.22.0
