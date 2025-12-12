@@ -1,4 +1,5 @@
 #
+eclipse-temurin:21-jdk-alpine
 #plugins/kaniko:latest
 #argoproj/argocd:latest
 #gradle:8.5-jdk21
