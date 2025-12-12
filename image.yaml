@@ -168,7 +168,7 @@ gradle:8.5-jdk21
 #ghcr.io/dexidp/dex:v2.43.1
 #redis:7.0.15-alpine
 #redis:7.2.7-alpine
-redis:8.2
+#redis:8.2
 #quay.io/prometheus/alertmanager:v0.27.0
 #quay.io/prometheus-operator/prometheus-config-reloader:v0.76.1
 #quay.io/kiwigrid/k8s-sidecar:1.27.4
