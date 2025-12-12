@@ -1,4 +1,8 @@
 #
+plugins/kaniko:latest
+docker.io/drone/git
+argoproj/argocd:latest
+gradle:8.5-jdk21
 #gotenberg/gotenberg:8
 #ghcr.io/linuxserver/libreoffice:7.5.9
 #mcp/redis:latest
