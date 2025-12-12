@@ -114,6 +114,7 @@
 #docker.io/bitnami/kibana:8.17.4-debian-12-r0
 #portainer/portainer-ce:lts
 #docker.io/bitnami/rabbitmq:4.0.7-debian-12-r0
+docker.io/bitnami/rabbitmq:4.2-debian13
 #busybox:latest
 #alpine:latest
 #docker.io/bitnami/valkey-cluster:8.1.2-debian-12-r0
@@ -163,6 +164,7 @@
 #ghcr.io/dexidp/dex:v2.43.1
 #redis:7.0.15-alpine
 #redis:7.2.7-alpine
+redis:8.2
 #quay.io/prometheus/alertmanager:v0.27.0
 #quay.io/prometheus-operator/prometheus-config-reloader:v0.76.1
 #quay.io/kiwigrid/k8s-sidecar:1.27.4
@@ -182,7 +184,7 @@
 #quay.io/jetstack/cert-manager-webhook:v1.17.2
 #quay.io/jetstack/cert-manager-cainjector:v1.17.2
 #quay.io/kubespray/kubespray:v2.29.0
-#docker.io/traefik:v3.4.0
+#docker.io/traefik:v3.6.4
 #cr.fluentbit.io/fluent/fluent-bit:4.0.3
 #cr.fluentbit.io/fluent/fluent-bit:4.0.7
 
