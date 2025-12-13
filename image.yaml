@@ -1,4 +1,6 @@
 #
+gcr.io/kaniko-project/executor:v1.24.0
+
 #eclipse-temurin:21-jdk-alpine
 #plugins/kaniko:latest
 #argoproj/argocd:latest
