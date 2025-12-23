@@ -47,6 +47,12 @@ registry.cn-hangzhou.aliyuncs.com/robin-public/goharbor_harbor-jobservice:v2.13.
 registry.cn-hangzhou.aliyuncs.com/robin-public/goharbor_harbor-portal:v2.13.2
 registry.cn-hangzhou.aliyuncs.com/robin-public/goharbor_harbor-core:v2.13.2
 
+#crictl pull k8s.m.daocloud.io/kube-apiserver:v1.34.3
+#crictl pull k8s.m.daocloud.io/kube-scheduler:v1.34.3
+#crictl pull k8s.m.daocloud.io/kube-scheduler:v1.34.3
+#crictl pull k8s.m.daocloud.io/kube-proxy:v1.34.3
+
+
 k8s.m.daocloud.io/kube-proxy:v1.33.0
 k8s.m.daocloud.io/kube-proxy:v1.33.1
 k8s.m.daocloud.io/kube-proxy:v1.33.2
