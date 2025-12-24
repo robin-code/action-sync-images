@@ -1,6 +1,6 @@
 #
 
-quay.io/keycloak/keycloak:26.4.7
+#quay.io/keycloak/keycloak:26.4.7
 #gcr.io/kaniko-project/executor:v1.24.0
 #quay.io/cilium/cilium-envoy:v1.34.10-1762597008-ff7ae7d623be00078865cff1b0672cc5d9bfc6d5
 #quay.io/cilium/cilium:v1.18.5
