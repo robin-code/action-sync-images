@@ -7,7 +7,6 @@
 #ghcr.io/kube-vip/kube-vip:v1.0.2
 #registry.k8s.io/cpa/cluster-proportional-autoscaler:v1.8.8
 #registry.k8s.io/coredns/coredns:v1.12.1
-#k8s.m.daocloud.io/ingress-nginx/controller:v1.13.2
 #registry.k8s.io/ingress-nginx/controller:v1.14.1
 #registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.6.5
 
@@ -39,10 +38,6 @@
 
 #quay.io/argoproj/argocd:v3.2.0
 #ghcr.io/dexidp/dex:v2.44.0
-
-
-#docker.io/bitnami/rabbitmq:4.0.7-debian-12-r0
-#docker.io/bitnami/elasticsearch:8.17.4-debian-12-r0
 
 
 #goharbor/harbor-jobservice:v2.14.0
