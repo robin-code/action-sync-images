@@ -25,8 +25,8 @@
 #quay.io/prometheus/alertmanager:v0.28.1
 #quay.io/prometheus/prometheus:v3.4.1
 #quay.io/prometheus/prometheus:v3.5.0
-quay.io/prometheus/prometheus:v3.8.1
-quay.io/prometheus/alertmanager:v0.30.0
+#quay.io/prometheus/prometheus:v3.8.1
+#quay.io/prometheus/alertmanager:v0.30.0
 #quay.io/prometheus-operator/prometheus-config-reloader:v0.83.0
 
 
