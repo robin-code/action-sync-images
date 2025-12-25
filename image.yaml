@@ -1,5 +1,4 @@
 #
-
 #quay.io/keycloak/keycloak:26.4.7
 #gcr.io/kaniko-project/executor:v1.24.0
 #quay.io/cilium/cilium-envoy:v1.34.10-1762597008-ff7ae7d623be00078865cff1b0672cc5d9bfc6d5
@@ -38,8 +37,8 @@
 #quay.io/frrouting/frr:10.4.1
 
 #quay.io/argoproj/argocd:v3.2.0
-#ghcr.io/dexidp/dex:v2.44.0
-
+quay.io/argoproj/argocd:v3.2.2
+ghcr.io/dexidp/dex:v2.44.0
 
 #goharbor/harbor-jobservice:v2.14.0
 #goharbor/trivy-adapter-photon:v2.14.0
