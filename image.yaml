@@ -1,6 +1,6 @@
 #
 
-rabbitmqoperator/cluster-operator:2.18.0
+#rabbitmqoperator/cluster-operator:2.18.0
 
 #quay.io/keycloak/keycloak:26.4.7
 #gcr.io/kaniko-project/executor:v1.24.0
