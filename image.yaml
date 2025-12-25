@@ -22,7 +22,7 @@
 #registry.k8s.io/kube-state-metrics/kube-state-metrics:v2.16.0
 #quay.io/prometheus-operator/prometheus-operator:v0.83.0
 #quay.io/prometheus-operator/prometheus-config-reloader:v0.83.0
-quay.io/prometheus-operator/prometheus-config-reloader:v0.87.1
+#quay.io/prometheus-operator/prometheus-config-reloader:v0.87.1
 #quay.io/prometheus/alertmanager:v0.28.1
 #quay.io/prometheus/prometheus:v3.4.1
 #quay.io/prometheus/prometheus:v3.5.0
