@@ -1,6 +1,6 @@
 #
 #plugins/kaniko:1.13.2
-plugins/docker:latest
+#plugins/docker:latest
 #docker.io/bitnami/redis:8.4.0
 #docker.io/bitnami/redis-sentinel:8.4.0
 #rabbitmqoperator/cluster-operator:2.18.0
