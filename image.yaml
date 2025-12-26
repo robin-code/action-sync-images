@@ -1,5 +1,5 @@
 #
-plugins/kaniko:1.13.2
+#plugins/kaniko:1.13.2
 
 #docker.io/bitnami/redis:8.4.0
 #docker.io/bitnami/redis-sentinel:8.4.0
