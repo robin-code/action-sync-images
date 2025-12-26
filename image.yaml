@@ -66,7 +66,9 @@
 #quay.io/jetstack/cert-manager-cainjector:v1.19.1
 #quay.io/jetstack/cert-manager-webhook:v1.19.1
 #ghcr.io/cloudnative-pg/cloudnative-pg:1.27.0
-
+quay.io/jetstack/cert-manager-controller:v1.19.2
+quay.io/jetstack/cert-manager-cainjector:v1.19.2
+quay.io/jetstack/cert-manager-webhook:v1.19.2
 
 
 #eclipse-temurin:21-jdk-alpine
