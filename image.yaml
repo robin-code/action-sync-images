@@ -260,7 +260,7 @@
 #quay.io/jetstack/cert-manager-webhook:v1.17.2
 #quay.io/jetstack/cert-manager-cainjector:v1.17.2
 #quay.io/kubespray/kubespray:v2.29.0
-quay.io/kubespray/kubespray:v2.29.1
+#quay.io/kubespray/kubespray:v2.29.1
 #docker.io/traefik:v3.6.4
 #cr.fluentbit.io/fluent/fluent-bit:4.0.3
 #cr.fluentbit.io/fluent/fluent-bit:4.0.7
