@@ -4,6 +4,8 @@ quay.io/jetstack/cert-manager-cainjector:v1.18.2
 docker.riji.life/robin-public/lscr.io/linuxserver/calibre-web:0.6.25
 docker.riji.life/robin-public/lscr.io/linuxserver/calibre-web:latest
 docker.riji.life/robin-public/linuxserver/calibre-web:latest
+docker.io/nextcloud:32.0.0-fpm
+docker.riji.life/robin-public/quay.io/prometheus/prometheus:v3.4.1
 
 quay.io/metallb/controller:v0.15.2
 quay.io/metallb/speaker:v0.15.2
