@@ -74,11 +74,11 @@
 #quay.io/jetstack/cert-manager-webhook:v1.19.2
 
 #eclipse-temurin:21-jdk-alpine
-eclipse-temurin:25-jdk-alpine
+#eclipse-temurin:25-jdk-alpine
 #argoproj/argocd:latest
 #gradle:8.5-jdk21
 #gradle:8.14-jdk21
-gradle:9.2.1-jdk25
+#gradle:9.2.1-jdk25
 #gotenberg/gotenberg:8
 #ghcr.io/linuxserver/libreoffice:7.5.9
 #mcp/redis:latest
