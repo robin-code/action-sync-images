@@ -147,7 +147,6 @@ ghcr.io/immich-app/immich-server:v2.5.2
 #docker.io/node:23
 #docker.io/node:24
 #docker.io/node:25
-ghcr.io/pnpm/pnpm:node25
 #node:20
 #node:21
 #node:22
