@@ -1,6 +1,6 @@
 #ghcr.io/actions/gha-runner-scale-set-controller:0.13.1
 #ghcr.io/actions/actions-runner:latest
-
+ghcr.io/open-webui/open-webui:main
 #
 #bitxeno/atvloadly:latest
 
