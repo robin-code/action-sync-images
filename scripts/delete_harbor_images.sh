@@ -10,6 +10,9 @@ HARBOR_USER=${HARBOR_USER:-}
 HARBOR_PASS=${HARBOR_PASS:-}
 HARBOR_URL=${HARBOR_URL:-"https://docker.riji.life"}
 HARBOR_URL=${HARBOR_URL%/}
+HARBOR_PROJECT=${HARBOR_PROJECT:-robin-public}
+HARBOR_REGISTRY=${HARBOR_URL#*://}
+HARBOR_REGISTRY=${HARBOR_REGISTRY%%/*}
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 FILE="$SCRIPT_DIR/../delete-images.yaml"
 
@@ -37,16 +40,36 @@ then
     exit 1
 fi
 
+fetch_digest() {
+  local project=$1
+  local repo_name=$2
+  local tag=$3
+  local repo_enc tag_enc url artifact_response response_code response_body digest
+
+  repo_enc=$(jq -nr --arg str "$repo_name" '$str|@uri')
+  tag_enc=$(jq -nr --arg str "$tag" '$str|@uri')
+  url="$HARBOR_URL/api/v2.0/projects/$project/repositories/$repo_enc/artifacts/$tag_enc"
+  artifact_response=$(curl -s -u "$HARBOR_USER:$HARBOR_PASS" -w "\n%{http_code}" "$url")
+  response_code="${artifact_response##*$'\n'}"
+  response_body="${artifact_response%$'\n'*}"
+
+  if [[ "$response_code" -ge 200 && "$response_code" -lt 300 ]]; then
+    digest=$(printf '%s' "$response_body" | jq -r '.digest')
+    if [[ -n "$digest" && "$digest" != "null" ]]; then
+      printf '%s' "$digest"
+      return 0
+    fi
+  elif [[ "$response_code" -ne 404 ]]; then
+    echo "❌ Failed to fetch artifact for $project/$repo_name:$tag, HTTP status code $response_code"
+  fi
+
+  return 1
+}
+
 while IFS= read -r full_image || [[ -n "$full_image" ]]; do
   # Skip empty lines and comments
   if [[ -z "$full_image" || "${full_image:0:1}" == "#" ]]; then
     continue
-  fi
-
-  # Check if the image starts with the skip prefix
-  if [[ "$full_image" == "docker.riji.life/robin-public/"* || "$full_image" == "registry.cn-hangzhou.aliyuncs.com/robin-public/"* ]]; then
-    echo "Skipping image: $full_image (starts with docker.riji.life/robin-public/ or registry.cn-hangzhou.aliyuncs.com/robin-public/)"
-    continue # Skip to the next image
   fi
 
   # Ensure there is an explicit tag (avoid mis-parsing images without tags)
@@ -56,8 +79,13 @@ while IFS= read -r full_image || [[ -n "$full_image" ]]; do
     continue
   fi
 
-  # If it doesn't start with the skip prefix, add the deletion prefix
-  local_image_to_delete="docker.riji.life/robin-public/$full_image"
+  if [[ "$full_image" == "$HARBOR_REGISTRY/"* ]]; then
+    local_image_to_delete="$full_image"
+  elif [[ "$full_image" == "$HARBOR_PROJECT/"* ]]; then
+    local_image_to_delete="$HARBOR_REGISTRY/$full_image"
+  else
+    local_image_to_delete="$HARBOR_REGISTRY/$HARBOR_PROJECT/$full_image"
+  fi
 
   image_without_registry=${local_image_to_delete#*/}
   repo=${image_without_registry%:*}
@@ -65,39 +93,41 @@ while IFS= read -r full_image || [[ -n "$full_image" ]]; do
   project=${repo%%/*}
   name=${repo#*/}
 
-  # URL encode the repository name using jq
-  name_enc=$(jq -nr --arg str "$name" '$str|@uri')
-
   echo "Processing image: $project/$name:$tag"
 
-  # Get artifacts and find the digest for the specific tag
-  artifacts_url="$HARBOR_URL/api/v2.0/projects/$project/repositories/$name_enc/artifacts?with_tag=true"
-  artifact_response=$(curl -s -u "$HARBOR_USER:$HARBOR_PASS" -w "\n%{http_code}" "$artifacts_url")
-  response_code="${artifact_response##*$'\n'}"
-  response_body="${artifact_response%$'\n'*}"
-
-  if [[ "$response_code" -lt 200 || "$response_code" -ge 300 ]]; then
-    echo "❌ Failed to fetch artifacts for $project/$name:$tag, HTTP status code $response_code"
-    continue
+  digest=""
+  resolved_name=""
+  candidate_names=("$name")
+  if [[ "$name" == *"/"* ]]; then
+    name_alt=${name//\//_}
+    if [[ "$name_alt" != "$name" ]]; then
+      candidate_names+=("$name_alt")
+    fi
   fi
 
-  digest=$(printf '%s' "$response_body" | jq -r --arg tag "$tag" '.[] | select(.tags[]?.name == $tag) | .digest' | head -n 1)
-  if [[ "$digest" == "null" ]]; then
-    digest=""
-  fi
+  for candidate in "${candidate_names[@]}"; do
+    if digest=$(fetch_digest "$project" "$candidate" "$tag"); then
+      resolved_name="$candidate"
+      break
+    fi
+  done
 
   if [ -n "$digest" ]; then
     echo "Found digest: $digest, deleting..."
+    name_enc=$(jq -nr --arg str "$resolved_name" '$str|@uri')
     del_response=$(curl -s -o /dev/null -w "%{http_code}" -u "$HARBOR_USER:$HARBOR_PASS" \
       -X DELETE "$HARBOR_URL/api/v2.0/projects/$project/repositories/$name_enc/artifacts/$digest")
 
     if [[ "$del_response" -ge 200 && "$del_response" -lt 300 ]]; then
-      echo "✅ Successfully deleted: $project/$name:$tag"
+      echo "✅ Successfully deleted: $project/$resolved_name:$tag"
     else
-      echo "❌ Failed to delete: $project/$name:$tag, HTTP status code $del_response"
+      echo "❌ Failed to delete: $project/$resolved_name:$tag, HTTP status code $del_response"
     fi
   else
     echo "⚠️ Tag not found: $project/$name:$tag"
+    if [[ "${#candidate_names[@]}" -gt 1 ]]; then
+      echo "   Checked repositories: ${candidate_names[*]}"
+    fi
   fi
 
 done < "$FILE"
