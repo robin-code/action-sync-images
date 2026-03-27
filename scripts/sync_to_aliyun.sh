@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-#export IMAGE_REGISTRY_NAME_SPACE=registry.cn-hangzhou.aliyuncs.com/robin-public
+#export IMAGE_REGISTRY_NAME_SPACE=registry.cn-hangzhou.aliyuncs.com/robin-sync
 #echo ${IMAGE_REGISTRY_NAME_SPACE}
 set -e
 # 检查变量是否已设置
