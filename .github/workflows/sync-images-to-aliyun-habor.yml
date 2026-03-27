@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repos
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Install Skopeo
         run: |
@@ -50,7 +50,7 @@ jobs:
     needs: sync_images_to_aliyun   # 依赖 build job 完成
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v6
 
       - name: Setup cloudflared
         uses: AnimMouse/setup-cloudflared@v2

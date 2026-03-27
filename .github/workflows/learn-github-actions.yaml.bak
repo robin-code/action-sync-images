@@ -17,7 +17,7 @@ jobs:
     # 操作步骤
     steps:
       # 使用 actions 脚本，例如，用于在工作流程中检出代码仓库的操作，即它允许你从存储库中检出（拉取）代码
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
       # 使用 actions 脚本，创建一个 node 运行环境并使用with参数指定了版本为 14
       - uses: actions/setup-node@v3
         with:
