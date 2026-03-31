@@ -98,6 +98,7 @@ while IFS= read -r full_image || [[ -n "$full_image" ]]; do
   digest=""
   resolved_name=""
   candidate_names=("$name")
+  # Harbor 中可能存在 / 与 _ 两种命名方式，尝试兼容
   if [[ "$name" == *"/"* ]]; then
     name_alt=${name//\//_}
     if [[ "$name_alt" != "$name" ]]; then

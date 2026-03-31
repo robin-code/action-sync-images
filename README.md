@@ -58,6 +58,29 @@ export HARBOR_URL=https://harbor.example.com
 ./scripts/delete_harbor_images.sh
 ```
 
+### 4) GitHub Actions 触发 Drone 构建
+
+在 GitHub 仓库里配置以下变量/密钥（Repository Settings -> Actions -> Variables/Secrets）：
+
+- `vars.DRONE_SERVER_URL`：Drone 公网入口，例如 `https://drone-api.example.com`
+- `vars.DRONE_REPO`：Drone 中的仓库名，例如 `DevOps/action-sync-images`
+- `secrets.DRONE_API_TOKEN`：Drone API Token
+
+如果启用了 Cloudflare Access，需要额外设置：
+
+- `secrets.CF_ACCESS_CLIENT_ID`
+- `secrets.CF_ACCESS_CLIENT_SECRET`
+
+Drone 端 `.drone.yml` 需要允许 `custom` 事件，否则 API 触发可能不会执行：
+
+```yaml
+trigger:
+  event:
+    - push
+    - pull_request
+    - custom
+```
+
 ## 依赖
 
 - `skopeo`（同步镜像）
@@ -72,6 +95,7 @@ export HARBOR_URL=https://harbor.example.com
   - `HARBOR_IMAGE_REGISTRY_NAME_SPACE`：目标镜像命名空间（如 `harbor.example.com/your-project`）。
   - `HARBOR_USERNAME` / `HARBOR_PASSWORD`：Harbor 账号密码。
   - `IMAGE_REGISTRY_NAME_SPACE`：阿里云镜像命名空间。
+  - `OUTPUT_DIR`：同步结果输出目录（默认 `/data`，不可写时自动降级到 `/tmp`）。
 - **删除 Harbor 镜像**
   - `HARBOR_USER` / `HARBOR_PASS`：Harbor 账号密码。
   - `HARBOR_URL`：Harbor 地址（默认 `https://docker.riji.life`）。
