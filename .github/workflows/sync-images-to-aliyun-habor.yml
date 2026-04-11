@@ -50,49 +50,49 @@ jobs:
           IMAGE_REGISTRY_NAME_SPACE: ${{ vars.DOCKER_REGISTRY }}/${{ vars.REGISTRY_NAME_SPACE }}
         run: bash scripts/sync_to_aliyun.sh
 
-  syn_to_harbor_by_cloudflare-tunnel:
-    runs-on: ubuntu-latest
-    needs: sync_images_to_aliyun   # 依赖 build job 完成
-    env:
-      DRONE_SERVER_URL: ${{ vars.DRONE_SERVER_URL }}
-      DRONE_REPO: ${{ vars.DRONE_REPO }}
-      DRONE_BRANCH_INPUT: ${{ github.event.inputs.drone_branch }}
-    steps:
-      - name: Trigger Harbor sync in Drone
-        env:
-          DRONE_API_TOKEN: ${{ secrets.DRONE_API_TOKEN }}
-          CF_ACCESS_CLIENT_ID: ${{ secrets.CF_ACCESS_CLIENT_ID }}
-          CF_ACCESS_CLIENT_SECRET: ${{ secrets.CF_ACCESS_CLIENT_SECRET }}
-        run: |
-          set -euo pipefail
-          : "${DRONE_API_TOKEN:?DRONE_API_TOKEN secret is required}"
-
-          DRONE_SERVER_URL="${DRONE_SERVER_URL:-https://drone.riji.life}"
-          DRONE_REPO="${DRONE_REPO:-DevOps/action-sync-images}"
-          DRONE_BRANCH="${DRONE_BRANCH_INPUT:-main}"
-
-          curl_args=(
-            --fail-with-body
-            --silent
-            --show-error
-            --location
-            --request POST
-            "${DRONE_SERVER_URL}/api/repos/${DRONE_REPO}/builds?branch=${DRONE_BRANCH}"
-            --header "Authorization: Bearer ${DRONE_API_TOKEN}"
-            --header 'User-Agent: GitHubAction/1.0'
-            --header 'Accept: application/json'
-            --connect-timeout 15
-            --max-time 60
-            --retry 3
-            --retry-delay 5
-            --retry-all-errors
-          )
-
-          if [[ -n "${CF_ACCESS_CLIENT_ID:-}" && -n "${CF_ACCESS_CLIENT_SECRET:-}" ]]; then
-            curl_args+=(
-              --header "CF-Access-Client-Id: ${CF_ACCESS_CLIENT_ID}"
-              --header "CF-Access-Client-Secret: ${CF_ACCESS_CLIENT_SECRET}"
-            )
-          fi
-
-          curl "${curl_args[@]}"
+#  syn_to_harbor_by_cloudflare-tunnel:
+#    runs-on: ubuntu-latest
+#    needs: sync_images_to_aliyun   # 依赖 build job 完成
+#    env:
+#      DRONE_SERVER_URL: ${{ vars.DRONE_SERVER_URL }}
+#      DRONE_REPO: ${{ vars.DRONE_REPO }}
+#      DRONE_BRANCH_INPUT: ${{ github.event.inputs.drone_branch }}
+#    steps:
+#      - name: Trigger Harbor sync in Drone
+#        env:
+#          DRONE_API_TOKEN: ${{ secrets.DRONE_API_TOKEN }}
+#          CF_ACCESS_CLIENT_ID: ${{ secrets.CF_ACCESS_CLIENT_ID }}
+#          CF_ACCESS_CLIENT_SECRET: ${{ secrets.CF_ACCESS_CLIENT_SECRET }}
+#        run: |
+#          set -euo pipefail
+#          : "${DRONE_API_TOKEN:?DRONE_API_TOKEN secret is required}"
+#
+#          DRONE_SERVER_URL="${DRONE_SERVER_URL:-https://drone.riji.life}"
+#          DRONE_REPO="${DRONE_REPO:-DevOps/action-sync-images}"
+#          DRONE_BRANCH="${DRONE_BRANCH_INPUT:-main}"
+#
+#          curl_args=(
+#            --fail-with-body
+#            --silent
+#            --show-error
+#            --location
+#            --request POST
+#            "${DRONE_SERVER_URL}/api/repos/${DRONE_REPO}/builds?branch=${DRONE_BRANCH}"
+#            --header "Authorization: Bearer ${DRONE_API_TOKEN}"
+#            --header 'User-Agent: GitHubAction/1.0'
+#            --header 'Accept: application/json'
+#            --connect-timeout 15
+#            --max-time 60
+#            --retry 3
+#            --retry-delay 5
+#            --retry-all-errors
+#          )
+#
+#          if [[ -n "${CF_ACCESS_CLIENT_ID:-}" && -n "${CF_ACCESS_CLIENT_SECRET:-}" ]]; then
+#            curl_args+=(
+#              --header "CF-Access-Client-Id: ${CF_ACCESS_CLIENT_ID}"
+#              --header "CF-Access-Client-Secret: ${CF_ACCESS_CLIENT_SECRET}"
+#            )
+#          fi
+#
+#          curl "${curl_args[@]}"
