@@ -130,7 +130,6 @@ docker.riji.life/robin-public/registry.k8s.io/metrics-server/metrics-server:v0.7
 
 docker.riji.life/library/robin-spring-boot-gradle-demo:112_202506130737_18a02fd
 docker.riji.life/library/robin-spring-boot-gradle-demo:latest
-docker.riji.life/robin-public/busybox:latest
 docker.riji.life/robin-public/registry.k8s.io/metrics-server/metrics-server:v0.7.0
 
 docker.io/library/busybox:1.28
