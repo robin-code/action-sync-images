@@ -289,7 +289,7 @@ steps:
       - ./scripts/sync_to_harbor.sh
       - cat /data/sync_result.txt
   - name: comment synced images
-    image: docker.riji.life/robin-public/alpine
+    image: alpine
     volumes:
       - name: shared
         path: /data
