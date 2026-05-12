@@ -3,7 +3,6 @@ quay.io/jetstack/cert-manager-webhook:v1.18.2
 quay.io/jetstack/cert-manager-cainjector:v1.18.2
 docker.riji.life/robin-public/lscr.io/linuxserver/calibre-web:0.6.25
 docker.riji.life/robin-public/lscr.io/linuxserver/calibre-web:latest
-docker.riji.life/robin-public/linuxserver/calibre-web:latest
 docker.io/nextcloud:32.0.0-fpm
 docker.riji.life/robin-public/quay.io/prometheus/prometheus:v3.4.1
 
@@ -100,17 +99,13 @@ docker.io/gitea/gitea:1.24.3-rootless
 robin-public/docker.gitea.com/gitea:1.24.5-rootless
 docker.riji.life/robin-public/docker.gitea.com/gitea:1.24.5-rootless
 docker.riji.life/robin-public/docker.gitea.com/gitea:1.24.6-rootless
-registry.cn-hangzhou.aliyuncs.com/robin-registry/react-guli-admin:latest
 registry.cn-hangzhou.aliyuncs.com/robin-registry/robin-spring-boot-gradle-demo:238_202505270934_8d815d2
 
 docker.riji.life/library/fluent-bit:4.0.1
 docker.io/nacos/nacos-server:v2.4.0.1
 docker.riji.life/robin-public/cr.fluentbit.io/fluent/fluent-bit:4.0.3
-docker.riji.life/robin-public/crazymax/cloudflared:latest
 docker.riji.life/library/maven:3.8-openjdk-8
 docker.riji.life/robin-public/maven:3.8-openjdk-8
-docker.riji.life/library/plugins/kaniko:latest
-docker.riji.life/robin-public/plugins/kaniko:latest
 docker.riji.life/robin-public/quay.io/calico/cni:v3.29.4
 docker.riji.life/robin-public/quay.io/calico/kube-controllers:v3.29.4
 docker.riji.life/robin-public/quay.io/calico/node:v3.29.4
@@ -131,13 +126,6 @@ docker.riji.life/robin-public/registry.k8s.io/metrics-server/metrics-server:v0.7
 docker.riji.life/library/robin-spring-boot-gradle-demo:112_202506130737_18a02fd
 docker.riji.life/library/robin-spring-boot-gradle-demo:latest
 docker.riji.life/robin-public/registry.k8s.io/metrics-server/metrics-server:v0.7.0
-
-docker.io/library/busybox:1.28
-docker.io/library/busybox:1.31.1
-docker.io/library/busybox:1.37.0
-docker.io/nicolaka/netshoot:latest
-ghcr.io/nicolaka/netshoot:latest
-docker.io/portainer/portainer-ce:lts
 
 
 docker.io/bitnami/keycloak:26.2.5-debian-12-r3

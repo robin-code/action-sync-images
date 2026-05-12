@@ -268,7 +268,7 @@ volumes:
       path: /root/maven/cache
 steps:
   - name: sync-images
-    image: docker.riji.life/robin-public/quay.io/skopeo/stable:latest
+    image: quay.io/skopeo/stable:latest
     pull: if-not-exists
     volumes:
       - name: shared
@@ -305,7 +305,7 @@ steps:
       - awk '''/^[[:space:]]*#/ || /^[[:space:]]*$/ {print $0; next} {print "#"$0}''' image.yaml.bak > image.yaml
 
   - name: commit and push
-    image: docker.riji.life/robin-public/alpine/git
+    image: alpine/git
     pull: if-not-exists
     volumes:
       - name: shared
