@@ -5,9 +5,9 @@
 #bitxeno/atvloadly:latest
 #nginx:1.27
 #nginx:1.28
-nginx:latest
-busybox:latest
-alpine:latest
+#nginx:latest
+#busybox:latest
+#alpine:latest
 #docker.elastic.co/beats/filebeat-wolfi:9.2.3
 #elastic/filebeat:8.19.9
 #rancher/local-path-provisioner:v0.0.33
