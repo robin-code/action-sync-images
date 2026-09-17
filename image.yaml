@@ -306,8 +306,8 @@
 #ghcr.io/sysadminsmedia/homebox:latest
 #ghcr.io/immich-app/immich-machine-learning:v2.7.5
 #ghcr.io/immich-app/immich-server:v2.7.5
-ghcr.io/immich-app/immich-machine-learning:v3.2.3
-ghcr.io/immich-app/immich-server:v3.2.3
+ghcr.io/immich-app/immich-machine-learning:v3.2.2
+ghcr.io/immich-app/immich-server:v3.2.2
 #lscr.io/linuxserver/calibre-web:latest
 #louislam/uptime-kuma:1.23.16
 #louislam/uptime-kuma:2.0.2
